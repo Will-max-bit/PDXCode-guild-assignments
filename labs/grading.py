@@ -1,12 +1,24 @@
 def grades(number):
     if number >= 90:
-        print('you got an A')
+        if number % 10 > 5: 
+            print('you got an A+')
+        elif number % 10 < 5:
+            print('you got an A-')
     elif number >= 80:
-        print('you got an B')
+        if number % 10 > 5: 
+            print('you got an B+')
+        elif number % 10 < 5:
+            print('you got an B-')
     elif number >= 70:
-        print('you got an C')
+        if number % 10 > 5: 
+            print('you got an C+')
+        elif number % 10 < 5:
+            print('you got an C-')
     elif number >= 60:
-        print('you got an D')
+        if number % 10 > 5: 
+            print('you got an D+')
+        elif number % 10 < 5:
+            print('you got an D-')
     elif number <= 59:
         print('you got an F')
 

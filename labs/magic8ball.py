@@ -1,4 +1,5 @@
 import random
+    #list to be used in program below
 eightBall_Options = [
     'It is certain',
     'It is decidedly so',
@@ -22,16 +23,19 @@ eightBall_Options = [
     'Very doubtful',
 ]
 
-
+    #function with no parameters that will be used for the while loop in building the madlib
 def eight_ball():
     return(random.choice(eightBall_Options))
-
+    #while loop will run until the user indicates no to the input intro
 while True:
     print('Welcome to the Dark magic 8 ball')
+    # the intro input is designed to take either yes or no as parameters regardless of capitalization or leading spaces. The program will continue to ask this question after each loop until "no" is received
     intro1 = input('Would you like to ask a question \n yes or no?: ').lower().strip()
     if intro1 == 'yes':
+    #if the user indicates yes, the program will prompt the user another question and then present the user with a madlib
         quest = input('What is your question?')
         print(f'The eight ball says "{eight_ball()}" to your \n question {quest}')
+        # if the user indicates "no" to intro1 then the program will print a message then end
     elif intro1 == 'no':
         print('Have a good day')
         break

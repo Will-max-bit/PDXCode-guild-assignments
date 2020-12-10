@@ -2,7 +2,7 @@ import string
 
             #string of user to be encrypted using rot13
 use_put = input('type something to be encrypted: ')
-            #
+            # Alpha will be used to offset for encryption
 alpha = string.ascii_lowercase
             #
 puncs = string.punctuation

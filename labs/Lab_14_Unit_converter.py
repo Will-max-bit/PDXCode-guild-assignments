@@ -86,7 +86,7 @@ def master_func(unit1,unit2,number):
         return result
     
 #asking user for the first unit of measurment
-first_unit = input('What is the first unit of measurment \n ft, mi, mt, km, yd, in: ')
+first_unit = input('What is the first unit of measurment \n ft, mi, mt, km,: ')
 #asking user for second unit of measurment that will be in the final result
 second_unit = input('What is the second unit of measurment to convert the first into \n ft, mi, mt, km: ')
 #asking user for integer length of the first unit of measurement

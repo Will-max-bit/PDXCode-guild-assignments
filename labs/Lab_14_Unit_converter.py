@@ -49,44 +49,15 @@ print(metes(usequest))
 
 #V4
 #Function to use user input as a number from the dictionary and used in the function below
-def to_meters(text):
-    #program searches dictionary for match to user input
-    if text in mydict:
-        return mydict[text]
-
-
-
+#V4
 #Function will take three parameters in order to convert between units
 def master_func(unit1,unit2,number):
-    #program will look for a match between the two user input measurements
-    if unit1 == 'ft' and unit2 == 'mi':
-        #program will convert first measurement(unit1) into meters then convert meters into the desired unit of length(unit2)
-        result = (to_meters(unit1) * number ) / mydict[unit2]
-        return result
-    if unit1 == 'mi' and unit2 == 'ft':
-        result = (to_meters(unit1) * number ) / mydict[unit2]
-        return result
-    if unit1 == 'km' and unit2 == 'mt':
-        result = (to_meters(unit1) * number ) / mydict[unit2]
-        return result
-    if unit1 == 'mt' and unit2 == 'km':
-        result = (to_meters(unit1) * number ) / mydict[unit2]
-        return result
-    if unit1 == 'mt' and unit2 == 'mi':
-        result = (to_meters(unit1) * number ) / mydict[unit2]
-        return result
-    if unit1 == 'mi' and unit2 == 'mt':
-        result = (to_meters(unit1) * number ) / mydict[unit2]
-        return result
-    if unit1 == 'ft' and unit2 == 'mt':
-        result = (to_meters(unit1) * number ) / mydict[unit2]
-        return result
-    if unit1 == 'mt' and unit2 == 'ft':
-        result = (to_meters(unit1) * number ) / mydict[unit2]
+        #result retrieves unit 1 pre-converted to meters value from the dictionary, multiplies that by chosen length and finally divides that by meter value of unit of measurment the function is converting into.
+        result = (mydict[unit1] * number) / mydict[unit2]
         return result
     
 #asking user for the first unit of measurment
-first_unit = input('What is the first unit of measurment \n ft, mi, mt, km,: ')
+first_unit = input('What is the first unit of measurment \n ft, mi, mt, km, yd, in: ')
 #asking user for second unit of measurment that will be in the final result
 second_unit = input('What is the second unit of measurment to convert the first into \n ft, mi, mt, km: ')
 #asking user for integer length of the first unit of measurement

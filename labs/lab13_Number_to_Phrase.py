@@ -1,6 +1,7 @@
 import math
 #Dictionary will be used to convert integer to string
 nums = {
+    0: '',
     1: 'one',
     2: 'two',
     3: 'three',
@@ -28,17 +29,28 @@ nums = {
     70: 'seventy',
     80: 'eighty',
     90: 'ninety',
-    100: 'one hundred and',
-    200: 'two hundred and',
-    300: 'three hundred and',
-    400: 'four hundred and',
-    500: 'five hundred and',
-    600: 'six hundred and',
-    700: 'seven hundred and',
-    800: 'eight hundred and',
-    900: 'nine hundred and',
+    100: 'one hundred',
+    200: 'two hundred',
+    300: 'three hundred',
+    400: 'four hundred',
+    500: 'five hundred',
+    600: 'six hundred',
+    700: 'seven hundred',
+    800: 'eight hundred',
+    900: 'nine hundred',
 
 }
+# nums2 = {
+#     100: 'one hundred',
+#     200: 'two hundred',
+#     300: 'three hundred',
+#     400: 'four hundred',
+#     500: 'five hundred',
+#     600: 'six hundred',
+#     700: 'seven hundred',
+#     800: 'eight hundred',
+#     900: 'nine hundred',
+# }
 
 
 def changling_nums(number):
@@ -50,20 +62,22 @@ def changling_nums(number):
     teens = (((number % 100)//10)*10)
     # if number argument after conversion can be found in dict the if statement will run and program will exit, 19,8 10, etc
     if number in nums:
-        print(nums[number])
+        return nums[number]
     # if number argument after conversion is in hundreds but with no 10's place the if statement below will run, 109,206, 303 etc
     elif hundreds in nums and teens not in nums and one_digit in nums:
-        print(nums[hundreds] + '-' + nums[one_digit])
+        return nums[hundreds] + '-' + nums[one_digit]
     # if number argument after conversion is not in hundreds but with 10's place if statement below will run, 89,16, 98 etc
     elif hundreds not in nums and teens in nums and one_digit in nums:
-        print(nums[teens] + '-' + nums[one_digit])
+        return nums[teens] + '-' + nums[one_digit]
     # if number argument after conversion is  in hundreds and with 10's place if statement below will run, 189,316, 998 etc
     elif hundreds in nums and teens in nums and one_digit in nums:
-        print(nums[hundreds] +' '+ nums[teens] + '-' + nums[one_digit])
+        return nums[hundreds] +' '+ nums[teens] +  nums[one_digit]
+    return
     
-    
+# for i in range(1,1000):
+#     print(i, changling_nums(i))    
 
 
-
-changling_nums(969)
+quest = int(input('Pick a number: '))
+print(changling_nums(quest))
 

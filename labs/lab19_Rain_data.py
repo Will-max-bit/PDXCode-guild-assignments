@@ -3,6 +3,7 @@ from datetime import datetime
 import re
 import pprint
 import math
+import statistics
 # response = requests.get('https://or.water.usgs.gov/non-usgs/bes/shipyard.rain')
 # print(response.text)
 
@@ -28,25 +29,24 @@ def calculate_mean(data):
     mean_total = mean_tally / len(data)
     return mean_total 
 
+
 def water_nums(nums):
     output = []
     for num in nums:
         output.append(num[1])
     return output
 
-def variance(nums):
-    m = mean(nums)
-    total = 0
-    for num in nums:
-        total += (num - m)**2
-    return total / len(nums)
 
 
-# >>> def getKey(item):
-# ...     return item[0]
-# >>> l = [[2, 3], [6, 7], [3, 34], [24, 64], [1, 43]]
-# >>> sorted(l, key=getKey)
-# [[1, 43], [2, 3], [3, 34], [6, 7], [24, 64]]
+
+# def variance(nums):
+#     m = mean(nums)
+#     total = 0
+#     for num in nums:
+#         total += (num - m)**2
+#     return total / len(nums)
+
+
 
 def getkey(item):
     return item[1]
@@ -61,9 +61,11 @@ def most_rain(items):
             pass
     #return output 
 
-#if i >= len(alpha):
-
 data = get_data()
+nums = []
+for datum in data:
+    nums.append(datum[1])
+print("variance of nums is % s"%(statistics.variance(nums)))
 test = sorted(data, key=getkey, reverse=True)
 print(test[0])
 water = water_nums(data)

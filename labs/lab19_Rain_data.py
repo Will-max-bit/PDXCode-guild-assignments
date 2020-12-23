@@ -65,13 +65,16 @@ data = get_data()
 nums = []
 for datum in data:
     nums.append(datum[1])
-print("variance of nums is % s"%(statistics.variance(nums)))
-test = sorted(data, key=getkey, reverse=True)
-print(test[0])
-water = water_nums(data)
+print("variance of water is % s"%(statistics.variance(nums)))
+date_and_water = sorted(data, key=getkey, reverse=True)
+water_data = date_and_water[0]
+dtg = date_and_water[0]
+date_group = (dtg[0].strftime('%d-%b-%Y'))
+print(f'on {date_group} there was {water_data[1]} inches of water')
+#water = water_nums(data)
 mean = calculate_mean(data)
 print(f'The mean is {mean}')
-#print(variance(water))
+
 
 
         

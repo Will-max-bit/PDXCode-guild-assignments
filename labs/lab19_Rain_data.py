@@ -4,10 +4,6 @@ import re
 import pprint
 import math
 import statistics
-# response = requests.get('https://or.water.usgs.gov/non-usgs/bes/shipyard.rain')
-# print(response.text)
-
-
 
 
 def get_data():
@@ -30,48 +26,26 @@ def calculate_mean(data):
     return mean_total 
 
 
-def water_nums(nums):
-    output = []
-    for num in nums:
-        output.append(num[1])
-    return output
-
-
-
-
-# def variance(nums):
-#     m = mean(nums)
-#     total = 0
-#     for num in nums:
-#         total += (num - m)**2
-#     return total / len(nums)
-
-
 
 def getkey(item):
     return item[1]
 
-
-def most_rain(items):
-    output = []
-    for item in items:
-        if item[1] > 0.1:
-            output.append(item)
-        for i in range(len(output)):
-            pass
-    #return output 
+ #words.sort(key=lambda tup: tup[1], reverse=True)
 
 data = get_data()
-nums = []
-for datum in data:
-    nums.append(datum[1])
-print("variance of water is % s"%(statistics.variance(nums)))
+def variance():
+    nums = []
+    for datum in data:
+        nums.append(datum[1])
+    return ("The variance of water is % s"%(statistics.variance(nums)))
+
+
 date_and_water = sorted(data, key=getkey, reverse=True)
+print(variance())
 water_data = date_and_water[0]
 dtg = date_and_water[0]
 date_group = (dtg[0].strftime('%d-%b-%Y'))
 print(f'on {date_group} there was {water_data[1]} inches of water')
-#water = water_nums(data)
 mean = calculate_mean(data)
 print(f'The mean is {mean}')
 

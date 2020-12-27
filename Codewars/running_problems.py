@@ -92,18 +92,17 @@ test = string.ascii_lowercase
 # Welcome. In this kata, you are asked to square every digit of a number and concatenate them.
 # For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1.
 # Note: The function accepts an integer and returns an integer
-test = 9191
-def square_digits(nums):
-    output = [int(x) for x in str(nums)]
-    num_list = []
-    for out in output:
-        num_list.append(out ** 2)
-    for i in num_list:
-        print(i,end="")
+# test = 9119
+# def square_digits(nums):
+#     output = [int(x) for x in str(nums)]
+#     num_list = []
+#     for out in output:
+#         num_list.append(out ** 2)
+#     result = int("".join(map(str,num_list)))
+#     return result
+#     #return output
 
-    #return output
-
-print(square_digits(test))
+# print(square_digits(test))
 
 # num = 2019
   
@@ -116,3 +115,15 @@ print(square_digits(test))
   
 # # printing result  
 # print (type(str(res)))
+
+#Create a function (or write a script in Shell) that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
+
+# test = 8
+# def even_or_odd(number):
+#     if number % 2 == 0:
+#         return 'Even'
+#     else:
+#         return 'False'
+    
+
+# print(even_or_odd(test))

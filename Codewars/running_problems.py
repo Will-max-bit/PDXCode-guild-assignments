@@ -161,11 +161,46 @@ test = string.ascii_lowercase
 
 # print(disemvoweled(test))
 
-# Given a string of words, you need to find the highest scoring word.
-# Each letter of a word scores points according to its position in the alphabet: a = 1, b = 2, c = 3 etc.
-# You need to return the highest scoring word as a string.
-# If two words score the same, return the word that appears earliest in the original string.
-# All letters will be lowercase and all inputs will be valid.
+#Write a function that returns both
+#the minimum and maximum number of the given list/array.
+# test = [3,2,1,4,5,4,6,8,1]
 
-# x = 0
-# print(x)
+
+# def min_max(lst):
+#     lst.sort()
+#     return [lst[0],lst[-1]]
+    
+# print(min_max(test))
+# Write a function that when given a URL as a string, parses out just
+# the domain name and returns it as a string. For example:
+import re
+# (\w*\(\W\w*\W*(www)*\W)
+#\W?(\w*\W\w*)\.
+#closer (\w*\W?\w*\.)
+#coming back to this one
+# def domain_name(url):
+#     test = re.findall(r'(\w*\W?\w*\.)',url)
+#     second_part = re.sub
+#     #second_part = re.sub(r'(.com\W*\w*\W*\w*\W*\))','',test)
+#     return test
+
+# test = 'domain_name("http://github.com/carbonfive/raygun")'
+# print(domain_name(test))
+
+# Write a function that takes in a string of one or more words,
+# and returns the same string, but with all five or more letter words reversed (Just like the name of this Kata). 
+# Strings passed in will consist of only letters and spaces. Spaces will be included only when more than one word is present.
+
+test = "Hey fellow warriors" 
+
+def spin_words(sentence):
+    output = []
+    sen_lst = sentence.split()
+    for sen in sen_lst:
+        if len(sen) >= 5:
+            output.append(sen[::-1])
+        elif len(sen) < 5:
+            output.append(sen)
+    out = ' '
+    return out.join(output)
+print(spin_words(test))

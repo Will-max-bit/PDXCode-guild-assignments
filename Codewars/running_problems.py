@@ -174,14 +174,10 @@ test = string.ascii_lowercase
 # Write a function that when given a URL as a string, parses out just
 # the domain name and returns it as a string. For example:
 import re
-# (\w*\(\W\w*\W*(www)*\W)
-#\W?(\w*\W\w*)\.
-#closer (\w*\W?\w*\.)
-#coming back to this one
+
+
 # def domain_name(url):
-#     test = re.findall(r'(\w*\W?\w*\.)',url)
-#     second_part = re.sub
-#     #second_part = re.sub(r'(.com\W*\w*\W*\w*\W*\))','',test)
+#     test = re.findall(r'(https?:(\/+)?)?(w+)?\.?([\w-.]+)\.\w+',url)
 #     return test
 
 # test = 'domain_name("http://github.com/carbonfive/raygun")'
@@ -191,16 +187,42 @@ import re
 # and returns the same string, but with all five or more letter words reversed (Just like the name of this Kata). 
 # Strings passed in will consist of only letters and spaces. Spaces will be included only when more than one word is present.
 
-test = "Hey fellow warriors" 
+# test = "Hey fellow warriors" 
 
-def spin_words(sentence):
-    output = []
-    sen_lst = sentence.split()
-    for sen in sen_lst:
-        if len(sen) >= 5:
-            output.append(sen[::-1])
-        elif len(sen) < 5:
-            output.append(sen)
-    out = ' '
-    return out.join(output)
-print(spin_words(test))
+# def spin_words(sentence):
+#     output = []
+#     sen_lst = sentence.split()
+#     for sen in sen_lst:
+#         if len(sen) >= 5:
+#             output.append(sen[::-1])
+#         elif len(sen) < 5:
+#             output.append(sen)
+#     out = ' '
+#     return out.join(output)
+# print(spin_words(test))
+
+# Given an array of integers, 
+# find the one that appears an odd number of times.
+# There will always be only one integer that appears 
+# an odd number of times.
+
+# test = [20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]
+
+test1 = [2, 12, 18, -8, -16]
+test2 = [0, -16, 13, 14, -11, 19, 4, 14, 0, 16, -1, -5, -11, -17, -15, -7, 15]
+
+test3 = [1,]
+
+def array_diff(a, b):
+    if a == []:
+        return a
+    if b == []:
+        return a
+    output=[]
+    numbers1 = a
+    numbers2 = b
+    for num in numbers1:
+        if num not in numbers2:
+            output.append(num)
+    return output
+print(array_diff(test1,test2))

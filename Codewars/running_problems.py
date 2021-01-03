@@ -173,7 +173,7 @@ test = string.ascii_lowercase
 # print(min_max(test))
 # Write a function that when given a URL as a string, parses out just
 # the domain name and returns it as a string. For example:
-import re
+#import re
 
 
 # def domain_name(url):
@@ -208,21 +208,68 @@ import re
 
 # test = [20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]
 
-test1 = [2, 12, 18, -8, -16]
-test2 = [0, -16, 13, 14, -11, 19, 4, 14, 0, 16, -1, -5, -11, -17, -15, -7, 15]
+# test1 = [2, 12, 18, -8, -16]
+# test2 = [0, -16, 13, 14, -11, 19, 4, 14, 0, 16, -1, -5, -11, -17, -15, -7, 15]
 
-test3 = [1,]
+# test3 = [1,]
 
-def array_diff(a, b):
-    if a == []:
-        return a
-    if b == []:
-        return a
-    output=[]
-    numbers1 = a
-    numbers2 = b
-    for num in numbers1:
-        if num not in numbers2:
-            output.append(num)
-    return output
-print(array_diff(test1,test2))
+# def array_diff(a, b):
+#     if a == []:
+#         return a
+#     if b == []:
+#         return a
+#     output=[]
+#     numbers1 = a
+#     numbers2 = b
+#     for num in numbers1:
+#         if num not in numbers2:
+#             output.append(num)
+#     return output
+# print(array_diff(test1,test2))
+#-------------------------------------------------------------
+# In this kata you will create a function that takes a list 
+# of non-negative integers and strings and returns a new list with the strings filtered out.
+# import re
+# #([^,]*(\'\w*))
+# test1 = [1,2,'a','b']
+# test2 = [1,'a','b',0,15]
+# test3 = [1,2,'aasf','1','123',123]
+# print(sorted(test3))
+#take everything out that isnt a number, maybe use the other regex
+# def filter_list(l):
+#     numbers = (l)
+#     out_lst = re.sub(r'(\'\w*)','',str(numbers))
+#     #nums = out_lst.split(',')
+#     for out in out_lst:
+#         print(out)
+#     return (out_lst)
+#lets try using matching instead
+# print(filter_list(test3))
+#------------------------------------------
+# test = "4 5 29 54 4 0 -214 542 -64 1 -3 6 -6"
+
+# # out = sorted(test.split())
+# # print(out)
+
+# def high_and_low(numbers):
+#     nums = numbers.split()
+#     for i in range(0, len(nums)):
+#         nums[i] = int(nums[i])
+#     output = sorted(nums, reverse=True)
+#     newlst = []
+#     newlst.append(output[0])
+#     newlst.append(output[-1])
+#     x = (' '.join(str(x) for x in newlst))
+#     return str(x)
+
+# print(high_and_low(test))
+#--------------------------------------------------
+# Given an array of integers,
+# find the one that appears an odd number of times.
+
+test = [20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]
+
+
+
+def find_it(seq):
+    return None

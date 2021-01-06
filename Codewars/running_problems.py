@@ -183,6 +183,8 @@ test = string.ascii_lowercase
 # test = 'domain_name("http://github.com/carbonfive/raygun")'
 # print(domain_name(test))
 
+#-------------------------------------------------------------------
+
 # Write a function that takes in a string of one or more words,
 # and returns the same string, but with all five or more letter words reversed (Just like the name of this Kata). 
 # Strings passed in will consist of only letters and spaces. Spaces will be included only when more than one word is present.
@@ -201,12 +203,7 @@ test = string.ascii_lowercase
 #     return out.join(output)
 # print(spin_words(test))
 
-# Given an array of integers, 
-# find the one that appears an odd number of times.
-# There will always be only one integer that appears 
-# an odd number of times.
-
-# test = [20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]
+#-------------------------------------------------------------------------------
 
 # test1 = [2, 12, 18, -8, -16]
 # test2 = [0, -16, 13, 14, -11, 19, 4, 14, 0, 16, -1, -5, -11, -17, -15, -7, 15]
@@ -267,9 +264,76 @@ test = string.ascii_lowercase
 # Given an array of integers,
 # find the one that appears an odd number of times.
 
-test = [20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]
+# test = [20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]
+
+# x = 2
+# y = 13
+
+
+# def find_it(seq):
+#     nums = sorted(seq)
+#     for i in range(len(nums)):
+#         count = 0
+#         for j in range(len(nums)):
+#             if nums[i] == nums[j]:
+#                 count +=1
+#         if (count % 2 !=0):
+#             return nums[i]
+       
+
+# print(find_it(test))
+
+# test = 'man i need a taxi up to ubud'
+# alpha_dict = {
+#     'a':1
+#     'b':2
+#     'c':3
+#     'd':4
+#     'e':5
+#     'f':6
+#     'g':7
+#     'h':8
+#     'i':9
+#     'j':10
+#     'k':11
+#     'l':12
+#     'm':13
+#     'n':14
+#     'o':15
+#     'p':16
+#     'q':17
+#     'r':18
+#     's':19
+#     't':20
+#     'u':21
+#     'v':22
+#     'w':23
+#     'x':24
+#     'y':25
+#     'z':26
+# }
+
+# def high(x):
+#     wrd_lst = x.split()
+#     for wrd in wrd_lst:
+#         for w in wrd:
+
+#     #return wrd_lst
+
+# print(high(test))
+#-------------------------------------------------------
+
+test = 'CodEWaRsCodEWaRs'
+
+def capitals(word):
+    letters = list(word)
+    output = []
+    for i,letter in enumerate(letters):
+        if letter.isupper():
+            output.append(i)
+            
+    return output
 
 
 
-def find_it(seq):
-    return None
+print(capitals(test))

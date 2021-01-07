@@ -15,9 +15,12 @@ img {
 
 body {
     margin: auto;
-    width: 50%;
+    max-width: 500px;
     border: 6px solid white;
     padding: 20px;
+    background-color: rgba(0, 0, 0, .5);
+}
+html {
     background-image: url("https://the8percent.com/wp-content/uploads/2017/05/BillNye.jpg");
     
 }
@@ -61,4 +64,8 @@ a {
 a:hover{
     color: orangered;
     font-size: 25px;
+}
+
+.my-list li{
+
 }

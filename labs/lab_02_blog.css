@@ -5,29 +5,49 @@ nav aside {
   float: right;
   font-style: italic;
   background-color: lightgray;
-  justify-content: flex-start;
+  justify-content: flex-end;
   position: relative;
   border: 2px solid rgb(10, 10, 10);
   
 }
 
+
+li:hover {
+    font-size: 25px;
+}
+
 .title {
- 
+    margin: 1px;
 }
 
 nav img{
     max-width: 1000px;
+    width: 33%;
     margin: 0%;
 }
 header {
-    font-size: large;
+    font-size: 30px;
     font-family: 'Archivo Black', sans-serif;
     background-color: whitesmoke;
     padding: 10px;
-    margin: auto;
     text-align: center;
-    border: chartreuse;
+    border: rgb(8, 8, 7);
     
+}
+.sidenav:hover {
+    font-size: 15px;
+    border: black;
+}
+.sidenav {
+    white-space:nowrap;
+    padding: 15px;
+    background-color: whitesmoke;
+    /* max-width: re; */
+    flex-wrap: nowrap;
+    font-size: medium;
+}
+.sidenav_container {
+    margin:30px 0;
 }
 
 main {
@@ -35,16 +55,17 @@ main {
     font-family: 'Poppins', sans-serif;
     background-color: whitesmoke;
     padding: 5px;
-    margin: auto;
     border: 6px solid rgb(10, 10, 10);
 }
 body {
     box-sizing: border-box;
-    background-image: url('/labs/images1/background.jpg');
+    background-image: url('/labs/images1/background1.png');
+    background-size: auto;
 }
 
 .class {
     border: 6px solid rgb(10, 10, 10);
+    
 }
 .box1 {
     font-size: large;
@@ -52,7 +73,7 @@ body {
     background-color: whitesmoke;
     padding: 5px;
     margin: 1;
-    border: 2px solid rgb(10, 10, 10);
+    border: 2px dotted rgb(10, 10, 10);
 }
 .box2 {
     font-size: large;
@@ -60,7 +81,7 @@ body {
     background-color: whitesmoke;
     padding: 5px;
     margin: 1;
-    border: 2px solid rgb(10, 10, 10);
+    border: 2px dotted rgb(10, 10, 10);
 }
 .box3{
     font-size: large;
@@ -68,16 +89,25 @@ body {
     background-color: whitesmoke;
     padding: 5px;
     margin: 1;
-    border: 2px solid rgb(10, 10, 10);
+    border: 2px dotted rgb(10, 10, 10);
 }
 footer{
     background-color: white;
-    box-sizing:border-box;
+    box-sizing:inherit;
     font-family: 'Inconsolata', monospace;
+    border: black;
 }
 img {
     max-width:500px ;
-    border: 1px solid black;
+    border: 5px solid rgb(8, 8, 8);
     padding: 1;
     margin: 1;
-  }
+}
+
+.links {
+    color: rgb(12, 11, 11);
+}
+.title {
+border: 5px solid rgb(8, 8, 8);
+    
+}

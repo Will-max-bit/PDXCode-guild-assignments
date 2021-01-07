@@ -56,7 +56,7 @@ def mad_answers():
 #running the program
 while True:
     mad_answers()
-    again = input('would you like to play again?')
+    again = input('would you like to play again?: ')
     if again in ['yes','ya','y']:
         again = True
     else:

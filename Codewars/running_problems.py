@@ -227,12 +227,13 @@ test = string.ascii_lowercase
 # In this kata you will create a function that takes a list 
 # of non-negative integers and strings and returns a new list with the strings filtered out.
 # import re
-# #([^,]*(\'\w*))
+#([^,]*(\'\w*))
 # test1 = [1,2,'a','b']
 # test2 = [1,'a','b',0,15]
 # test3 = [1,2,'aasf','1','123',123]
 # print(sorted(test3))
-#take everything out that isnt a number, maybe use the other regex
+
+# take everything out that isnt a number, maybe use the other regex
 # def filter_list(l):
 #     numbers = (l)
 #     out_lst = re.sub(r'(\'\w*)','',str(numbers))
@@ -240,7 +241,9 @@ test = string.ascii_lowercase
 #     for out in out_lst:
 #         print(out)
 #     return (out_lst)
-#lets try using matching instead
+
+
+# lets try using matching instead
 # print(filter_list(test3))
 #------------------------------------------
 # test = "4 5 29 54 4 0 -214 542 -64 1 -3 6 -6"
@@ -323,17 +326,63 @@ test = string.ascii_lowercase
 # print(high(test))
 #-------------------------------------------------------
 
-test = 'CodEWaRsCodEWaRs'
+# test = 'CodEWaRsCodEWaRs'
 
-def capitals(word):
-    letters = list(word)
-    output = []
-    for i,letter in enumerate(letters):
-        if letter.isupper():
-            output.append(i)
+# def capitals(word):
+#     letters = list(word)
+#     output = []
+#     for i,letter in enumerate(letters):
+#         if letter.isupper():
+#             output.append(i)
             
-    return output
+#     return output
 
 
 
-print(capitals(test))
+# print(capitals(test))
+#delete this when done
+# def add_binary(a,b):
+#     sum = a + b
+#     bines = bin(sum)
+#     return bines
+
+# print(add_binary(5,5))
+#--------------------------------------------------------
+# test1 = 5
+# test2 = 3
+
+# def add_binary(a,b):
+#     x = bin(a + b)
+#     return (x[2:])
+
+# print(add_binary(test1,test2))
+
+# flex-flow: column-reverse wrap-reverse;
+# align-items: flex-start;
+# align-content: space-between;
+# .align-content {align-self: flex-end;}
+
+
+# test = ['Jacob', 'Alex']
+# test1 = ['Max', 'John', 'Mark']
+# test3 = ['Peter']
+# test4 = ['Alex', 'Jacob', 'Mark', 'Max']
+
+#make a new list- iterate over it to get length
+#if length <= 4 use 2 - len for "the others part" append 0,1
+
+
+# def likes(names):
+#     pass
+
+# test = [1,2,'a','b']
+
+# def filter_list(l):
+#     nums = l
+#     output = []
+#     for i in range(len(nums)):
+#         if nums[i] != str(nums[i]):
+#             output.append(nums[i])
+#     return output
+# print(filter_list(test))
+        

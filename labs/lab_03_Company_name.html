@@ -12,24 +12,43 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
     <title>Hello, world!</title>
     <style>
         .blockquote {
             font-family: 'Arimo', sans-serif;
             font-size: 25px;
+            background-color: blanchedalmond;
+            border-radius: 30%;
         }
 
         h1 {
             text-align: center
         }
 
+        .figure-caption {
+            background-color: whitesmoke;
+            text-align: center;
+        }
+
+        .carousel-inner {
+            min-width: 500px;
+            min-height: 500px;
+        }
+
         .box1 {
             display: flex;
             justify-content: center;
-            justify-content: space-between;
-            margin: 1px;
-            padding: 1px;
+            justify-content: space-around;
+            margin: 20px;
+            padding: 10px;
+            background-image: url("images1/cat_back.jpg");
+        }
+
+
+        .form-row {
+            display: flex;
+            align-self: flex-end;
         }
 
         .dropdown-menu {
@@ -44,16 +63,10 @@
         .center {
             display: flex;
             justify-content: center;
-            max-width: 100%;
+            margin: 10px;
+
         }
 
-        .list-group {
-            display: flex;
-            min-width: 500px;
-            max-width: 50%;
-            max-height: 50%;
-            justify-content: flex-end;
-        }
 
         .card-text {
             word-wrap: normal;
@@ -62,10 +75,28 @@
         .foot {
             font-family: 'Italianno', cursive;
         }
+
+        .h1box {
+            background-color: rgb(98, 98, 99);
+        }
+
+        .para1 {
+            background-color: #f69e5a;
+
+        }
+
+        .back-color {
+            background-color: rgb(143, 143, 143);
+        }
+        
+        .sidebox {
+            display: flexbox;
+            justify-content: right;
+        }
     </style>
 </head>
 
-<body>
+<body class="back-color">
     <h1>Soylent Green</h1>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -134,7 +165,7 @@
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="https://placekitten.com/201/201" alt="kitty" width="75" height="75"
+                <img src="/labs/images1/cat_logo.PNG" alt="kitty" width="100" height="100"
                     class="d-inline-block align-top">
                 The Future is food
             </a>
@@ -148,16 +179,16 @@
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="https://placekitten.com/200/200" class="d-block " alt="kitten">
+                    <img src="https://placekitten.com/200/200" class="d-block w-100" alt="kitten">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://placekitten.com/205/205" class="d-block " alt="kitten">
+                    <img src="https://placekitten.com/205/205" class="d-block w-100" alt="kitten">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://placekitten.com/195/195" class="d-block " alt="kitten">
+                    <img src="https://placekitten.com/195/195" class="d-block w-100" alt="kitten">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://placekitten.com/201/201" class="d-block " alt="kitten">
+                    <img src="https://placekitten.com/201/201" class="d-block w-100" alt="kitten">
                 </div>
             </div>
         </div>
@@ -174,47 +205,53 @@
                 <a href="#" class="btn btn-primary">My Values</a>
             </div>
         </div>
+
         <figure class="figure">
-            <img src="https://placekitten.com/100/100" class="figure-img img-fluid rounded" alt="...">
+            <img src="https://placekitten.com/100/100" class="figure-img img-fluid rounded" alt="happy kitten customer">
             <figcaption class="figure-caption">Speechless</figcaption>
         </figure>
         <figure class="figure">
-            <img src="https://placekitten.com/100/99" class="figure-img img-fluid rounded" alt="...">
+            <img src="https://placekitten.com/100/99" class="figure-img img-fluid rounded" alt="happy kitten customer">
             <figcaption class="figure-caption">Another Happy Customer!</figcaption>
         </figure>
+
+
     </div>
+    
     <p>
-    <h1>Our Mission</h1>
-    Webtwo ipsum hojoki yammer blyve bitly convore elgg, bebo jibjab tumblr jibjab zimbra, wesabe dropio skype
-    hojoki. Sococo zinch eduvant dropio zooomr heroku, zimbra flickr voki gooru. Hipmunk meebo diigo zoho, shopify.
-    Spotify disqus dopplr airbnb vimeo zapier convore, sococo cloudera ifttt spock.
+    <h1 class="h1box">Our Mission</h1>
+    <article class="para1">
+        Webtwo ipsum hojoki yammer blyve bitly convore elgg, bebo jibjab tumblr jibjab zimbra, wesabe dropio skype
+        hojoki. Sococo zinch eduvant dropio zooomr heroku, zimbra flickr voki gooru. Hipmunk meebo diigo zoho, shopify.
+        Spotify disqus dopplr airbnb vimeo zapier convore, sococo cloudera ifttt spock.
 
-    Zooomr oovoo convore zinch octopart, chumby jaiku glogster. hulu etsy. Jaiku spotify dogster kazaa, edmodo.
-    Glogster joost etsy jibjab yuntaa zoho oooooc, cotweet oovoo boxbe diigo groupon, convore bitly kiko gsnap
-    flickr. Whrrl imeem oooj sclipo mzinga, mozy voxy. Wesabe heekya etsy napster xobni, chumby octopart zynga
-    groupon, sifteo lala disqus. Joukuu edmodo dogster oooooc, oooj. Dogster zinch greplin oooooc ning wufoo whrrl
-    jaiku, zoosk kosmix ebay yammer joyent flickr. Convore dropio disqus cloudera, geni.
+        Zooomr oovoo convore zinch octopart, chumby jaiku glogster. hulu etsy. Jaiku spotify dogster kazaa, edmodo.
+        Glogster joost etsy jibjab yuntaa zoho oooooc, cotweet oovoo boxbe diigo groupon, convore bitly kiko gsnap
+        flickr. Whrrl imeem oooj sclipo mzinga, mozy voxy. Wesabe heekya etsy napster xobni, chumby octopart zynga
+        groupon, sifteo lala disqus. Joukuu edmodo dogster oooooc, oooj. Dogster zinch greplin oooooc ning wufoo whrrl
+        jaiku, zoosk kosmix ebay yammer joyent flickr. Convore dropio disqus cloudera, geni.
 
-    <blockquote class="blockquote">
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."</p>
-    </blockquote>
+        <blockquote class="blockquote">
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."</p>
+        </blockquote>
 
-    Jibjab hipmunk kazaa, yuntaa. Tumblr blippy boxbe, insala. Octopart doostang zimbra zoosk, zanga disqus.
-    Octopart ngmoco kiko prezi qeyno lanyrd, omgpop kno shopify. Skype plickers foodzie weebly napster knewton
-    akismet, kippt hipmunk scribd plugg grockit zimbra, plugg oooooc klout wikia kippt. Jaiku fleck rovio bebo
-    wesabe tivo whrrl, chegg gooru chumby plickers palantir. Plickers kippt zoho whrrl plickers, movity ideeli.
-    Scribd imeem zillow octopart, dogster woopra. Jibjab heekya heroku gooru heekya, zapier bitly palantir udemy,
-    balihoo quora zillow. Prezi glogster oooj zappos tivo kazaa, zimbra tumblr chartly balihoo. unigo spotify unigo.
-    quora ideeli. Squidoo bebo ifttt oooooc, ifttt. Zapier voxy knewton rovio kiko, heekya napster. Wesabe dogster
-    cotweet lijit knewton, twones eduvant.
-    </p>
+        Jibjab hipmunk kazaa, yuntaa. Tumblr blippy boxbe, insala. Octopart doostang zimbra zoosk, zanga disqus.
+        Octopart ngmoco kiko prezi qeyno lanyrd, omgpop kno shopify. Skype plickers foodzie weebly napster knewton
+        akismet, kippt hipmunk scribd plugg grockit zimbra, plugg oooooc klout wikia kippt. Jaiku fleck rovio bebo
+        wesabe tivo whrrl, chegg gooru chumby plickers palantir. Plickers kippt zoho whrrl plickers, movity ideeli.
+        Scribd imeem zillow octopart, dogster woopra. Jibjab heekya heroku gooru heekya, zapier bitly palantir udemy,
+        balihoo quora zillow. Prezi glogster oooj zappos tivo kazaa, zimbra tumblr chartly balihoo. unigo spotify unigo.
+        quora ideeli. Squidoo bebo ifttt oooooc, ifttt. Zapier voxy knewton rovio kiko, heekya napster. Wesabe dogster
+        cotweet lijit knewton, twones eduvant.
+        </p>
+    </article>
     <!-- Optional JavaScript; choose one of the two! -->
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
 
-        <footer class="foot">Bogus Cat Company established 1996</footer>
+    <footer class="foot">Bogus Cat Company established 1996</footer>
 
 </body>
 

@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+    <title>Hello, world!</title>
+    <style>
+        .blockquote {
+            font-family: 'Arimo', sans-serif;
+            font-size: 25px;
+        }
+
+        h1 {
+            text-align: center
+        }
+
+        .box1 {
+            display: flex;
+            justify-content: center;
+            justify-content: space-between;
+            margin: 1px;
+            padding: 1px;
+        }
+
+        .dropdown-menu {
+            box-sizing: border-box;
+        }
+
+        .dropdown-menu {
+            box-shadow: black;
+            background-color: rgb(210, 205, 214);
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            max-width: 100%;
+        }
+
+        .list-group {
+            display: flex;
+            min-width: 500px;
+            max-width: 50%;
+            max-height: 50%;
+            justify-content: flex-end;
+        }
+
+        .card-text {
+            word-wrap: normal;
+        }
+
+        .foot {
+            font-family: 'Italianno', cursive;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Soylent Green</h1>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Menu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Our Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">integrity</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            links
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Recruiting</a></li>
+                            <li><a class="dropdown-item" href="#">Awards</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Sign-in below</a></li>
+                            <hr class="dropdown-divider">
+                            <li>
+                                <aside class="side_login">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                                aria-describedby="emailHelp">
+                                            <div id="emailHelp" class="form-text">We will share your email with anyone
+                                                willing to pay.</div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                                            <input type="password" class="form-control" id="exampleInputPassword1">
+                                        </div>
+                                        <div class="mb-3 form-check">
+                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </form>
+                                </aside>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">______</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="https://placekitten.com/201/201" alt="kitty" width="75" height="75"
+                    class="d-inline-block align-top">
+                The Future is food
+            </a>
+            <h3>
+                "We are your food"
+                <small class="text-muted">with a personality </small>
+            </h3>
+        </div>
+    </nav>
+    <div class="container-fluid center">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://placekitten.com/200/200" class="d-block " alt="kitten">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://placekitten.com/205/205" class="d-block " alt="kitten">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://placekitten.com/195/195" class="d-block " alt="kitten">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://placekitten.com/201/201" class="d-block " alt="kitten">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box1">
+        <div class="card" style="width: 18rem;">
+            <img src="https://placekitten.com/201/201" class="card-img-top" alt="CEO Kitten">
+            <div class="card-body">
+                <h5 class="card-title">CEO Ricky Ticky Tabby</h5>
+                <p class="card-text">Nap all day love to play with owner's hair tie so hiiiiiiiiii feed me now paw your
+                    face to wake you up in the morning and need to chase tail. Roll over and sun my belly cough hairball
+                    on conveniently placed pants. </p>
+                <a href="#" class="btn btn-primary">My Values</a>
+            </div>
+        </div>
+        <figure class="figure">
+            <img src="https://placekitten.com/100/100" class="figure-img img-fluid rounded" alt="...">
+            <figcaption class="figure-caption">Speechless</figcaption>
+        </figure>
+        <figure class="figure">
+            <img src="https://placekitten.com/100/99" class="figure-img img-fluid rounded" alt="...">
+            <figcaption class="figure-caption">Another Happy Customer!</figcaption>
+        </figure>
+    </div>
+    <p>
+    <h1>Our Mission</h1>
+    Webtwo ipsum hojoki yammer blyve bitly convore elgg, bebo jibjab tumblr jibjab zimbra, wesabe dropio skype
+    hojoki. Sococo zinch eduvant dropio zooomr heroku, zimbra flickr voki gooru. Hipmunk meebo diigo zoho, shopify.
+    Spotify disqus dopplr airbnb vimeo zapier convore, sococo cloudera ifttt spock.
+
+    Zooomr oovoo convore zinch octopart, chumby jaiku glogster. hulu etsy. Jaiku spotify dogster kazaa, edmodo.
+    Glogster joost etsy jibjab yuntaa zoho oooooc, cotweet oovoo boxbe diigo groupon, convore bitly kiko gsnap
+    flickr. Whrrl imeem oooj sclipo mzinga, mozy voxy. Wesabe heekya etsy napster xobni, chumby octopart zynga
+    groupon, sifteo lala disqus. Joukuu edmodo dogster oooooc, oooj. Dogster zinch greplin oooooc ning wufoo whrrl
+    jaiku, zoosk kosmix ebay yammer joyent flickr. Convore dropio disqus cloudera, geni.
+
+    <blockquote class="blockquote">
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."</p>
+    </blockquote>
+
+    Jibjab hipmunk kazaa, yuntaa. Tumblr blippy boxbe, insala. Octopart doostang zimbra zoosk, zanga disqus.
+    Octopart ngmoco kiko prezi qeyno lanyrd, omgpop kno shopify. Skype plickers foodzie weebly napster knewton
+    akismet, kippt hipmunk scribd plugg grockit zimbra, plugg oooooc klout wikia kippt. Jaiku fleck rovio bebo
+    wesabe tivo whrrl, chegg gooru chumby plickers palantir. Plickers kippt zoho whrrl plickers, movity ideeli.
+    Scribd imeem zillow octopart, dogster woopra. Jibjab heekya heroku gooru heekya, zapier bitly palantir udemy,
+    balihoo quora zillow. Prezi glogster oooj zappos tivo kazaa, zimbra tumblr chartly balihoo. unigo spotify unigo.
+    quora ideeli. Squidoo bebo ifttt oooooc, ifttt. Zapier voxy knewton rovio kiko, heekya napster. Wesabe dogster
+    cotweet lijit knewton, twones eduvant.
+    </p>
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+
+        <footer class="foot">Bogus Cat Company established 1996</footer>
+
+</body>
+
+</html>

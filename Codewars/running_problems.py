@@ -362,18 +362,34 @@ test = string.ascii_lowercase
 # align-content: space-between;
 # .align-content {align-self: flex-end;}
 
+testy = []
+test = ['Jacob', 'Alex']
+test1 = ['Max', 'John', 'Mark']
+test3 = ['Peter']
+test4 = ['Alex', 'Jacob', 'Mark', 'Max']
 
-# test = ['Jacob', 'Alex']
-# test1 = ['Max', 'John', 'Mark']
-# test3 = ['Peter']
-# test4 = ['Alex', 'Jacob', 'Mark', 'Max']
-
-#make a new list- iterate over it to get length
-#if length <= 4 use 2 - len for "the others part" append 0,1
+# make a new list- iterate over it to get length
+# if length <= 4 use 2 - len for "the others part" append 0,1
 
 
 # def likes(names):
-#     pass
+#     like = names
+#     total_of_likes = len(like)
+#     if like == []:
+#             return "no one likes this"
+#     for friend in like:
+#         num = (total_of_likes - 2) 
+        
+#         if total_of_likes >= 4:
+#             return (f'{like[0]}, {like[1]} and {num} others like this')
+#         if total_of_likes == 3:
+#             return (f'{like[0]}, {like[1]} and {like[2]} like this')
+#         if total_of_likes == 2:
+#             return (f'{like[0]} and {like[1]} like this')
+#         if total_of_likes == 1:
+#             return (f'{like[0]} likes this')
+# print(likes(testy))
+
 
 # test = [1,2,'a','b']
 

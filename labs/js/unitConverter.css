@@ -1,0 +1,33 @@
+h1 {
+    text-align: center;
+    border: black 2px solid;
+    border-radius: 70px;
+    /* margin: 10px; */
+    margin-top: 20px;
+    padding: 5px;
+}
+
+.submit_btn  {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.solution {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border: black 2px solid;
+    border-radius: 70px;
+    margin: 10px;
+    
+}
+
+.row{
+    padding: 5px;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 5px;
+    
+}

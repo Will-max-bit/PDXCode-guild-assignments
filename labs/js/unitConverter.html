@@ -1,12 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- Required meta tags -->
+    <title>Unit Converter</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/labs/js/unitConverter.css" type="text/css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+
 </head>
+
 <body>
+    <h1>Unit Converter</h1>
+    <div class="row">
+        <div class="col-md-3 ">
+            <input type="text" id="first_unit" class="form-control" placeholder="Unit to be converted" aria-label="First name">
+        </div>
+        <div class="col-md-3 ">
+            <input type="text" id="second_unit" class="form-control" placeholder="unit converted into" aria-label="Last name">
+        </div>
+        <div class="col-md-3 ">
+            <input type="text" id="number_length" class="form-control" placeholder="numerical length" aria-label="Last name">
+        </div>
+    </div>
+    <div class='submit_btn'><input class="btn btn-primary" id="btn_click" type="submit" value="Submit"></div>
     
-    <script src="unitConverter.js" ></script>
+    <!-- <div></div> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <div>
+    <div class="solution" id="solution">Result here</div>
+    </div>
+    <script src="unitConverter.js"></script>
 </body>
+
 </html>

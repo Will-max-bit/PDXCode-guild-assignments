@@ -11,21 +11,21 @@ function rockPaperScissors() {
         let rand_Choice = Math.floor(Math.random() * options.length)
         let compChoice = options[rand_Choice]
         let userChoice;
-            if (paper_option.checked){
-                userChoice = paper_option.value
-            }
-            else if (rock_option.checked){
-                userChoice = rock_option.value
-            }
-            else if (scissors_option.checked) {
-                userChoice = scissors_option.value
-            }
+        if (paper_option.checked) {
+            userChoice = paper_option.value
+        }
+        else if (rock_option.checked) {
+            userChoice = rock_option.value
+        }
+        else if (scissors_option.checked) {
+            userChoice = scissors_option.value
+        }
 
         if (userChoice === compChoice) {
             return ("It's a tie")
         }
         else if (userChoice === 'rock' && compChoice === 'paper') {
-            return("You have lost")
+            return ("You have lost")
         }
 
         else if (userChoice === 'rock' && compChoice !== 'scissors') {
@@ -56,6 +56,6 @@ function rockPaperScissors() {
 document.getElementById("btn_click").addEventListener('click', function () {
     let output = rockPaperScissors()
     solution.innerText = output
-    
+
 
 })

@@ -1,0 +1,53 @@
+h1{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Just Another Hand', cursive;
+    color: rgb(12, 12, 12);
+   
+}
+.container{
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 400px;
+    padding: 10px;
+    border: black 2px solid;
+    background-image: url(/labs/images1/background_paper.jpg);
+    background-size:100% ;
+    min-height: 1000px;
+}
+h2{
+    display: flex;
+    justify-content: center;
+    font-family: 'Just Another Hand', cursive;
+    font-size: large;
+
+}
+.table {
+    margin-bottom: 20px;
+}
+
+.text_enter{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+h3{
+    text-align: center;
+}
+.table_completed {
+    padding: 5px;
+    margin: 10px;
+    
+}
+.table_completed th {
+    text-decoration: line-through;
+}
+
+
+.background {
+    background-image:url(/labs/images1/school_supplies.jpg);
+    background-size: 100%;
+}

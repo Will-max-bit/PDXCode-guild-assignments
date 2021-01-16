@@ -34,7 +34,7 @@ print(sum_two_smallest_numbers(numnum))
 #         Jaden-Cased:     "How Can Mirrors Be Real If Our Eyes Aren't Real"
 import re
 def to_jaden_case(s):
-    return re.sub(r"[A-Za-z]+('[A-Za-z]+)?",
+    #return re.sub(r"[A-Za-z]+('[A-Za-z]+)?",
      lambda mo: mo.group(0)[0].upper() +
      mo.group(0)[1:].lower(),
      s)
@@ -54,7 +54,7 @@ def friend(x):
     return output
 ''' 
 
-'''
+'''.
 # A pangram is a sentence that contains every single letter of the alphabet at least once. 
 # For example, the sentence "The quick brown fox jumps over the lazy dog" is a pangram, because
 # it uses the letters A-Z at least once (case is irrelevant).Given a string, 
@@ -66,7 +66,7 @@ import re
 
 def is_pangram(s):
     puncs_remov = s.lower()
-    puncs_remov = re.sub(r'[\d\s\W]', '', puncs_remov)
+    #puncs_remov = re.sub(r'[\d\s\W]', '', puncs_remov)
     output=[]
     for punc in puncs_remov:
         output.append(punc)
@@ -362,11 +362,11 @@ test = string.ascii_lowercase
 # align-content: space-between;
 # .align-content {align-self: flex-end;}
 
-testy = []
-test = ['Jacob', 'Alex']
-test1 = ['Max', 'John', 'Mark']
-test3 = ['Peter']
-test4 = ['Alex', 'Jacob', 'Mark', 'Max']
+# testy = []
+# test = ['Jacob', 'Alex']
+# test1 = ['Max', 'John', 'Mark']
+# test3 = ['Peter']
+# test4 = ['Alex', 'Jacob', 'Mark', 'Max']
 
 # make a new list- iterate over it to get length
 # if length <= 4 use 2 - len for "the others part" append 0,1
@@ -401,4 +401,134 @@ test4 = ['Alex', 'Jacob', 'Mark', 'Max']
 #             output.append(nums[i])
 #     return output
 # print(filter_list(test))
-        
+
+# import requests
+# import json
+# from datetime import datetime
+
+# response = requests.get('http://www.codewars.com/api/v1/users/Will-max-bit/code-challenges/completed?page=0', headers={'Authorization': 'Token token="-"'})
+# response_data = response.json()
+
+
+
+
+
+# data = response_data['data']
+# def code_wars(api):
+#     for datum in data:
+#         chal_name = datum['name']
+#         lan_name = datum['completedLanguages']
+#         language = "".join(lan_name)
+#         date = datum['completedAt'][:10]    
+#         day = datetime.strptime(date, '%Y-%m-%d')
+#         print(f'{chal_name} written in {language} on {day}')
+    
+# #print(data)
+
+# print(code_wars(data))  
+
+#----------------------------------------------------------------------
+
+# The goal of this exercise is to convert a string to a new string where 
+# each character in the new string is "(" if that character appears only 
+# once in the original string, or ")" if that character appears more than 
+# once in the original string.
+
+# "din"      =>  "((("
+# "recede"   =>  "()()()"
+# "Success"  =>  ")())())"
+# "(( @"     =>  "))((" 
+
+# test = 'Success'
+
+# def duplicate_encode(word):
+#     text = word.lower()
+#     output = []
+#     for i in range(len(text)):
+#         for text[i] in text:
+#             if text[i] == text[i]:
+#                 print(text[i])
+#         # if text[i] in text:
+#         #     output.append(')')
+#         # elif text[i] not in text:
+#         #     output.append('(')
+#     return(output)
+#         # print(i)
+
+
+# print(duplicate_encode(test))
+
+# find the odd number and return it's index +1
+# test = "2 4 7 8 10"
+# test2 = "1 2 2"
+# test3 = '3 50 5 35 49 47 5 1 47 29 27 41 21 3 7 11 15 23 41 3 9 11 29 21 15 51 11 3 25 51 27 21 1 41 23 35 21 47 9 5 19 47 47 19 7 37'
+
+# def iq_test(numbers):
+#     ele_list = numbers.split()
+#     output = []
+#     for i in range(len(ele_list)):
+#         out = int(ele_list[i])
+#         output.append(out)
+#     j = 0
+#     y = 0
+#     for i in range(len(output)):
+#         if output[i] % 2 == 1:
+#             j += 1
+#             result0 = output[i]
+#         if output[i] % 2 == 0:
+#             y += 1
+#             result1 = output[i]
+    
+#     if j == 1:
+#         return output.index(result0) + 1
+#     if y == 1:
+#         return output.index(result1) + 1
+            
+
+# print(iq_test(test3))
+
+# x = 2
+# y = 6
+
+# print(y%x)
+# test2 = ['n','w','e','w','n','s','n','s', 'e','w'] #should equal false
+# test1 = ['n','s','n','s','n','s','n','s','n','s']
+# test3 =  ['e', 'w', 'e', 'w', 'n', 's', 'n', 's', 'e', 'w'] #should equal true = 0
+# test4 = ['n', 's', 'e', 'w', 'n', 's', 'e', 'w', 'n', 's'] #should equal true  = 0    
+
+# newdict = {
+#     'n': 1,
+#     's': -1,
+#     'w': 1,
+#     'e': -1,
+# }
+
+
+
+
+
+# def is_valid_walk(walk):
+#     if len(walk) != 10:
+#         return False
+#     for i in range(len(walk)):
+#         for walk[i] in walk:
+            
+            
+    
+# print(is_valid_walk(test3))
+
+test = 42145
+test2 = 145263
+test3 = 123456789
+
+
+def descending_order(num):
+    nums = [int(x) for x in str(num)]
+    output = sorted(nums,reverse=True)
+    string_nums = [str(i) for i in output]
+    result = int(''.join(string_nums))
+
+    return result
+
+
+print(descending_order(test3))

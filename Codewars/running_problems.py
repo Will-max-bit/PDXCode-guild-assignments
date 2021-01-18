@@ -517,18 +517,46 @@ test = string.ascii_lowercase
     
 # print(is_valid_walk(test3))
 
-test = 42145
-test2 = 145263
-test3 = 123456789
+# test = 42145
+# test2 = 145263
+# test3 = 123456789
 
 
-def descending_order(num):
-    nums = [int(x) for x in str(num)]
-    output = sorted(nums,reverse=True)
-    string_nums = [str(i) for i in output]
-    result = int(''.join(string_nums))
+# def descending_order(num):
+#     nums = [int(x) for x in str(num)]
+#     output = sorted(nums,reverse=True)
+#     string_nums = [str(i) for i in output]
+#     result = int(''.join(string_nums))
 
-    return result
+#     return result
 
 
-print(descending_order(test3))
+# print(descending_order(test3))
+
+# def is_triangle(a,b,c):
+#     if (a + b) > c and (a + c) > b and (b + c) > a:
+#         return True
+#     else:
+#         return False
+        
+
+
+# print(is_triangle(7,2,2))
+
+
+
+# test = 'aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz'
+
+
+# def printer_error(s):
+#     compare = 'nopqrstuvwxyz'
+#     denominator = len(s)
+#     i = 0
+#     for letter in s:
+#         if letter in compare:
+#             i += 1
+#     return str(i)+'/'+str(denominator)
+
+# print(printer_error(test))
+
+

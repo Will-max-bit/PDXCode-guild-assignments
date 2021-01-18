@@ -558,5 +558,14 @@ test = string.ascii_lowercase
 #     return str(i)+'/'+str(denominator)
 
 # print(printer_error(test))
+test =[ [ 7,9,8,6,2 ], [6,3,5,4,3], [5,8,7,4,5] ]
+test2 = [ [11,12,14,54], [67,89,90,56], [7,9,4,3], [9,8,6,7]]
 
+def sum_of_minimums(numbers):
+    result = 0
+    for num in numbers:
+        x = sorted(num)
+        result += x[0]
+    return result
 
+print(sum_of_minimums(test))

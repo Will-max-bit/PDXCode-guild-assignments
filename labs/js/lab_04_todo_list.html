@@ -16,16 +16,22 @@
 </head>
 
 <body>
+
+    <div id="div_alert" class="alert alert-warning" role="alert" style="display:none;">
+        Please fill out all input  fields
+    </div>
+    
     <div class="background">
         <h1>To Do list</h1>
         <div class="container">
 
             <h2>Groceries</h2>
-            <div class="text_enter"><input type="text" id="input_field" placeholder="enter Items here"
+            <!-- enter field with placeholder that will delete on focus -->
+            <div class="text_enter"><input type="text" onfocus="this.value=''" id="input_field" placeholder="enter Items here"
                     class="input_field">
                 <button type="button" class="btn btn-primary" id="enter_Button">Enter</button>
             </div>
-            <!-- <label for="items">Items</label> -->
+            <!-- table structure below -->
             <table class="table">
                 <tbody id="table_contents">
                     <tr>

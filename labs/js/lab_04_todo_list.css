@@ -13,10 +13,23 @@ h1{
     flex-wrap: wrap;
     max-width: 400px;
     padding: 10px;
-    border: black 2px solid;
+    /* border: black 2px solid; */
     background-image: url(/labs/images1/background_paper.jpg);
     background-size:100% ;
     min-height: 1000px;
+    box-shadow:
+    /* The top layer shadow */
+    0 -1px 1px rgba(0,0,0,0.15),
+    /* The second layer */
+    0 -10px 0 -5px #eee,
+    /* The second layer shadow */
+    0 -10px 1px -4px rgba(0,0,0,0.15),
+     /* The third layer */
+    0 -20px 0 -10px #eee,
+    /* The third layer shadow */
+    0 -20px 1px -9px rgba(0,0,0,0.15);
+    /* Padding for demo purposes */
+    padding: 30px;
 }
 h2{
     display: flex;
@@ -32,6 +45,7 @@ h2{
 .text_enter{
     display: flex;
     justify-content: space-evenly;
+    
 }
 
 h3{
@@ -50,4 +64,10 @@ h3{
 .background {
     background-image:url(/labs/images1/school_supplies.jpg);
     background-size: 100%;
+}
+.input_field {
+    margin-bottom: 13px;
+}
+.btn-danger {
+    margin: 2px;
 }

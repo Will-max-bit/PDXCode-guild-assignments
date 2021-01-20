@@ -3,6 +3,7 @@ let enter_Button = document.querySelector('#enter_Button')
 let table_contents = document.querySelector('#table_contents')
 let complete_button = document.querySelector('#complete_button')
 let table_completed = document.querySelector('#table_completed')
+let div_alert = document.querySelector('#div_alert')
 
 
 
@@ -11,7 +12,10 @@ enter_Button.addEventListener('click', function (evt) {
     console.log(item)
 
     if (item === '') {
-        alert('Enter a valid selection')
+        div_alert.style.display = ''
+        setTimeout(function() {
+            div_alert.style.display = 'none'
+        },2500)
         return
     }
 

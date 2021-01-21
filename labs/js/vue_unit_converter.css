@@ -1,0 +1,22 @@
+.rows {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 5px;
+    padding: 5px;
+}
+h1 {
+    text-align: center;
+}
+
+.result {
+    margin: 5px;
+    padding: 5px;
+    
+}
+#results {
+    border: black solid 2px;
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+}

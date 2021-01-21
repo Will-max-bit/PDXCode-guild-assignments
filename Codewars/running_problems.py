@@ -495,27 +495,38 @@ test = string.ascii_lowercase
 # test1 = ['n','s','n','s','n','s','n','s','n','s']
 # test3 =  ['e', 'w', 'e', 'w', 'n', 's', 'n', 's', 'e', 'w'] #should equal true = 0
 # test4 = ['n', 's', 'e', 'w', 'n', 's', 'e', 'w', 'n', 's'] #should equal true  = 0    
+# test5 = ['n', 'e', 'w', 'n', 'n', 's', 'e', 's', 'n', 's']
 
-# newdict = {
+
+# x = {'n': 0,
+#     's': 0,
+# }
+# y = []
+
+
+# def is_valid_walk(walk):
+#     x = 0
+#     newdict = {
 #     'n': 1,
 #     's': -1,
 #     'w': 1,
 #     'e': -1,
 # }
-
-
-
-
-
-# def is_valid_walk(walk):
 #     if len(walk) != 10:
 #         return False
 #     for i in range(len(walk)):
-#         for walk[i] in walk:
+#         if walk[i] in newdict:
+#             x += newdict[walk[i]]
+
+#     if x == 0:
+#         return True
+#     else:
+#         return False
+    
             
             
     
-# print(is_valid_walk(test3))
+# print(is_valid_walk(test5))
 
 # test = 42145
 # test2 = 145263
@@ -558,14 +569,35 @@ test = string.ascii_lowercase
 #     return str(i)+'/'+str(denominator)
 
 # print(printer_error(test))
-test =[ [ 7,9,8,6,2 ], [6,3,5,4,3], [5,8,7,4,5] ]
-test2 = [ [11,12,14,54], [67,89,90,56], [7,9,4,3], [9,8,6,7]]
+# test =[ [ 7,9,8,6,2 ], [6,3,5,4,3], [5,8,7,4,5] ]
+# test2 = [ [11,12,14,54], [67,89,90,56], [7,9,4,3], [9,8,6,7]]
 
-def sum_of_minimums(numbers):
-    result = 0
-    for num in numbers:
-        x = sorted(num)
-        result += x[0]
-    return result
+# def sum_of_minimums(numbers):
+#     result = 0
+#     for num in numbers:
+#         x = sorted(num)
+#         result += x[0]
+#     return result
 
-print(sum_of_minimums(test))
+# print(sum_of_minimums(test))
+
+test = [{'name': 'Bart'},{'name': 'Lisa'},{'name': 'Maggie'},{'name': 'Homer'},{'name': 'Marge'}]
+test1 = [ {'name': 'Bart'} ]
+test2 = [ {'name': 'Bart'}, {'name': 'Lisa'} ]
+
+def namelist(names):
+    output = []
+    for name in names:
+        for value in name:
+            output.append(name[value])
+    if len(output) == 0:
+        return ''
+    elif len(output) == 1:
+        return ''.join(output)
+    elif len(output) == 2:
+        return output[0] + ' & ' + output[1]
+    elif len(output) > 2:
+        x = output[-2] + ' & ' + output[-1]
+        return ', '.join(output[0:-2]) +', '+ x
+
+print(namelist(test))

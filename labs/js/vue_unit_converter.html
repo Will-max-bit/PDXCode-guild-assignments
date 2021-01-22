@@ -17,7 +17,7 @@
     <h1>Vue Unit Converter</h1>
     <div id="app" class="rows">
         <!-- {{ message }} -->
-        <select v-model="options1" >
+        <select v-model="options1">
             <option value="ft">feet</option>
             <option value="mi">miles</option>
             <option value="km">kilometers</option>
@@ -26,8 +26,8 @@
             <option value="mt">meters</option>
         </select>
 
-        <input type="number" v-model="distance" min='1' placeholder="enter an integer"/>
-        
+        <input type="number" v-model="distance" min='1' placeholder="enter an integer" />
+
         <select v-model="options2">
             <option value="ft">feet</option>
             <option value="mi">miles</option>
@@ -37,17 +37,19 @@
             <option value="mt">meters</option>
         </select>
         <button type="button" v-on:click="outPut" class="btn btn-outline-success">Convert</button>
-    </div>
-    <hr>
-    <div class="row" class="result" >
-        <div class="col" id="results">
-            results will appear here
-            <!-- <input type="text" class="form-control" v-model='results' placeholder="Result Here" aria-label="results"  /> -->
-            
+
+        <hr>
+        <div class="row" class="result">
+            <div class="col" id="results">
+                <!-- results will appear here -->
+                result appears below
+                <div id="resulty">{{results}}</div>
+                <!-- <input type="text" class="form-control" v-model='results' placeholder="Result Here" aria-label="results"  /> -->
+
+            </div>
+
         </div>
-
     </div>
-
 
 
 

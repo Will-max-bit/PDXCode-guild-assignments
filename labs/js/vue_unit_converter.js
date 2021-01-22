@@ -25,8 +25,9 @@ let app = new Vue({
                 'mt': 1,
             }
             let result = dictConversions[this.options1] * this.distance / dictConversions[this.options2]
-            results = document.querySelector('#results')
-            results.innerHTML = result
+            this.results = result
+            // results = document.querySelector('#results')
+            // results.innerHTML = result
             
 
 

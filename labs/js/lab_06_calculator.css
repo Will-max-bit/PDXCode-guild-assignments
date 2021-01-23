@@ -1,0 +1,26 @@
+.screen_input {
+    background-color: rgb(243, 151, 12);
+    min-height: 100px;
+    max-width: 250px;
+}
+.buttons_numbers{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2px;
+    max-width: 250px;
+}
+h1{
+    text-align: center;
+}
+/* .container{
+    display: flex;
+    justify-content: center;
+    flex-direction: row; */
+    
+
+.box1{
+    display: flex;
+    justify-content: center;
+    border-style: solid;
+    /* max-width: fit-content; */
+}

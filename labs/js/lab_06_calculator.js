@@ -1,7 +1,6 @@
 var app = new Vue({
     el: '#app',
     data: {
-      message: 'Hello Vue!',
       screen_example: '',
       first_operand: '',
       second_operand: '',
@@ -13,6 +12,9 @@ var app = new Vue({
         
             this.screen_example += first_num
             
+        },
+        clear: function(){
+            location.reload();
         },
         equals: function(solution){
             this.second_operand = this.screen_example
@@ -30,13 +32,31 @@ var app = new Vue({
             else if (this.operator1 === '%' ){
                 this.screen_example = (parseInt(this.first_operand) / parseInt(this.second_operand)) *100
             }
-            else if(this.operator1 === '␡'){
+            else if (this.operator1 === 'X' ){
+                this.screen_example = (parseInt(this.first_operand) * parseInt(this.second_operand))
+            }
+            else if (this.operator1 === '^' ){
+                this.screen_example = (parseInt(this.first_operand) ** parseInt(this.second_operand))
+            }
+            else if (this.operator1 === '!' ){
+                this.screen_example = factorial(this.first_operand)
+            }
+            else if (this.operator1 === 'Sin' ){
+                this.screen_example = Math.sin(this.first_operand)
+                console.log(this.screen_example)
+            }
+            else if (this.operator1 === 'Cos' ){
+                this.screen_example = Math.cos(this.first_operand)
+                console.log(this.screen_example)
+            }
+            else if (this.operator1 === 'Tan' ){
+                this.screen_example = Math.tan(this.first_operand * Math.PI / 180)
+                console.log(this.screen_example)
+            }
+            else if (this.operator1 === '␡'){
                 this.second_operand == ''
             }
 
-            // alert(this.first_operand)
-            // alert(this.operator1)
-            // alert(this.second_operand)
             
         },
         operator: function(op){
@@ -57,3 +77,16 @@ var app = new Vue({
     
     }
   })
+
+function factorial(num){
+    if( num === 0 || num === 1)
+    return 1;
+    for (let i = num - 1; i >= 1; i--){
+        num *= i;
+    }
+    return num
+}
+// function sine(num){
+//     let result = math.sin(num)
+//     return result
+// }

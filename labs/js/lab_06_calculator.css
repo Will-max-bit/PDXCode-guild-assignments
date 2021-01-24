@@ -1,26 +1,40 @@
 .screen_input {
     background-color: rgb(243, 151, 12);
     min-height: 100px;
-    max-width: 250px;
+    max-width: 350px;
+    text-align: center;
+    font-size: xx-large;
+    margin: 2px;
 }
 .buttons_numbers{
     display: flex;
     flex-wrap: wrap;
     margin: 2px;
-    max-width: 250px;
+    /* margin-left: 40px; */
+    padding: 2px;
+    /* max-width: 250px; */
+    justify-content:center;
 }
 h1{
-    text-align: center;
+    text-align: left;
 }
-/* .container{
+.container{
     display: flex;
     justify-content: center;
-    flex-direction: row; */
+    flex-direction: row;
     
+}
 
 .box1{
     display: flex;
-    justify-content: center;
     border-style: solid;
-    /* max-width: fit-content; */
+    /* width: fit-content; */
+    max-width: 350px;
+    /* background-color: rgb(139, 136, 136); */
+}
+.btn_operators{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }

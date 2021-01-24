@@ -581,23 +581,67 @@ test = string.ascii_lowercase
 
 # print(sum_of_minimums(test))
 
-test = [{'name': 'Bart'},{'name': 'Lisa'},{'name': 'Maggie'},{'name': 'Homer'},{'name': 'Marge'}]
-test1 = [ {'name': 'Bart'} ]
-test2 = [ {'name': 'Bart'}, {'name': 'Lisa'} ]
+# test = [{'name': 'Bart'},{'name': 'Lisa'},{'name': 'Maggie'},{'name': 'Homer'},{'name': 'Marge'}]
+# test1 = [ {'name': 'Bart'} ]
+# test2 = [ {'name': 'Bart'}, {'name': 'Lisa'} ]
 
-def namelist(names):
+# def namelist(names):
+#     output = []
+#     for name in names:
+#         for value in name:
+#             output.append(name[value])
+#     if len(output) == 0:
+#         return ''
+#     elif len(output) == 1:
+#         return ''.join(output)
+#     elif len(output) == 2:
+#         return output[0] + ' & ' + output[1]
+#     elif len(output) > 2:
+#         x = output[-2] + ' & ' + output[-1]
+#         return ', '.join(output[0:-2]) +', '+ x
+
+# print(namelist(test))
+#---------------------------------------------------------------------
+import re
+
+# x = re.sub(r'[aeiou]','',string, flags=re.IGNORECASE)
+test = 'hello'
+test2 = 'How are you today?'
+
+def encode(st):
+    first_dict = {
+        'a': '1',
+        'e':'2',
+        'i':'3',
+        'o':'4',
+        'u':'5',
+    }
     output = []
-    for name in names:
-        for value in name:
-            output.append(name[value])
-    if len(output) == 0:
-        return ''
-    elif len(output) == 1:
-        return ''.join(output)
-    elif len(output) == 2:
-        return output[0] + ' & ' + output[1]
-    elif len(output) > 2:
-        x = output[-2] + ' & ' + output[-1]
-        return ', '.join(output[0:-2]) +', '+ x
+    for i in range(len(st)):
+        if st[i] not in first_dict:
+            output.append(st[i])
+        if st[i] in first_dict:
+            output.append(first_dict[st[i]])
+    return ''.join(output)
 
-print(namelist(test))
+test3 = 'h4w 1r2 y45 t4d1y?'
+def decode(st):
+    first_dict = {
+        '1':'a',
+        '2':'e',
+        '3':'i',
+        '4':'o',
+        '5':'u',
+    }
+    st = st.lower()
+    output = []
+    for i in range(len(st)):
+        if st[i] not in first_dict:
+            output.append(st[i])
+        if st[i] in first_dict:
+            output.append(first_dict[st[i]])
+    return ''.join(output)
+
+
+print(decode(test3))
+print(encode(test2))

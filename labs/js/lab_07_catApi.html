@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <style>
+        img {
+
+            max-width: 250px;
+            min-width: 250px;
+            max-height: 250px;
+            min-height: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        {{ message }}
+
+        <div class="container">
+            <div class="row">
+                <div>
+                    <img v-bind:src="cat_photo" alt="">
+
+
+
+
+
+
+
+                </div>
+            </div>
+            <div><button type="button" v-on:click="moreCats" class="btn btn-primary">More random cats</button>
+            </div>
+            <!-- <input type="text" v-model='cat_categories' /> -->
+            <select v-model='category'>
+                <option  v-for="category in cat_categories" v-bind:value="category.name">{{category.name}}</option>
+            </select>
+        </div>
+    </div>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <!-- vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- js -->
+    <script src="/labs/js/lab_07_catAPI.js"></script>
+</body>
+
+</html>

@@ -41,9 +41,9 @@
             </div>
             <div><button type="button" v-on:click="moreCats" class="btn btn-primary">More random cats</button>
             </div>
-            <!-- <input type="text" v-model='cat_categories' /> -->
-            <select v-model='category'>
-                <option  v-for="category in cat_categories" v-bind:value="category.name">{{category.name}}</option>
+        
+            <select v-model='category' v-on:change="category_function(rowID,$event)">
+                <option  v-for="category in cat_categories"  v-bind:value="category.name">{{category.name}}</option>
             </select>
         </div>
     </div>

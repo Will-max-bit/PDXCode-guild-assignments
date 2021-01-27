@@ -1,0 +1,28 @@
+img {
+    width: 100%;
+    border: solid black 2px;
+    box-shadow: 0 0 10px rgb(8, 8, 8);
+}
+h1 {
+    text-align: center;
+    font-family: 'Potta One', cursive;
+    background-color: blanchedalmond;
+
+}
+body{
+    background-image: url(/labs/images1/cat_back.png);
+    
+}
+#buttons{
+    display: flex;
+    height: 50%;
+    justify-content: space-around;
+    
+ 
+    box-shadow:0 0 10px rgb(8, 8, 8);
+    
+}
+select:hover{
+    background-color: #0d6efd;
+}
+

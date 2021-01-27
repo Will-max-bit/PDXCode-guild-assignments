@@ -5,16 +5,21 @@ let app = new Vue({
         cat_photo: '',
         categories: 'test',
         category: '',
-        rowID: '',
+        breed: '',
+        
     },
     methods: {
         cat_picture: function () {
             axios({
                 method: 'get',
-                url: 'https://api.thecatapi.com/v1/images/search'
+                url: 'https://api.thecatapi.com/v1/images/search',
+                params: {
+                    category_ids: this.category,
+                    breed_ids: this.breed,
+                }
             }).then((response) => {
                 this.cat_photo = response.data[0].url
-                // console.log(this.cat_photo)
+                
             })
         },
         moreCats: function () {
@@ -30,14 +35,20 @@ let app = new Vue({
                 console.log(this.cat_categories)
             })
         },
-        category_function: function category_function(rowID,$event){
-            alert('test')
-            console.log(rowID)
-            console.log($event)
-        }
+       cat_breeds: function(){
+        axios({
+            method: 'get',
+            url: 'https://api.thecatapi.com/v1/breeds'
+        }).then((response) => {
+            this.cat_breeds = response.data
+            console.log(this.cat_breeds)
+        })
+       }
     },
     created: function () {
+        this.moreCats()
         this.cat_picture()
         this.cat_categories()
+        this.cat_breeds()
     }
 })

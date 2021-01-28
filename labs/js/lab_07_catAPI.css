@@ -1,12 +1,16 @@
 img {
     width: 100%;
+    /* min-height: 500px; */
+    /* min-width: 400px; */
+    /* max-height: 500px; */
     border: solid black 2px;
     box-shadow: 0 0 10px rgb(8, 8, 8);
+    
 }
 h1 {
     text-align: center;
     font-family: 'Potta One', cursive;
-    background-color: blanchedalmond;
+    background-color: #fd9c0d;
 
 }
 body{
@@ -23,6 +27,18 @@ body{
     
 }
 select:hover{
-    background-color: #0d6efd;
+    background-color: #fd9c0d;
 }
 
+select {
+    color: #0d6efd;
+    font-family: 'Permanent Marker', cursive;
+
+  }
+  option:not(:first-of-type) {
+    color: black;
+  }
+button{
+    font-family: 'Permanent Marker', cursive;
+    
+}

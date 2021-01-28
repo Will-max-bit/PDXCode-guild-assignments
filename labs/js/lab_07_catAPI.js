@@ -1,9 +1,8 @@
 let app = new Vue({
     el: '#app',
     data: {
-        message: 'Hello world',
         cat_photo: '',
-        categories: 'test',
+        // categories: 'test',
         category: '',
         breed: '',
         
@@ -18,7 +17,15 @@ let app = new Vue({
                     breed_ids: this.breed,
                 }
             }).then((response) => {
-                this.cat_photo = response.data[0].url
+                console.log(response.data)
+                if ( response.data.length === 0) {
+                    this.cat_photo = 'https://http.cat/404'
+                    this.page_reload()
+                } else {
+                    this.cat_photo = response.data[0].url
+                }
+                
+                
                 
             })
         },
@@ -32,7 +39,7 @@ let app = new Vue({
                 url: 'https://api.thecatapi.com/v1/categories'
             }).then((response) => {
                 this.cat_categories = response.data
-                console.log(this.cat_categories)
+                // console.log(this.cat_categories)
             })
         },
        cat_breeds: function(){
@@ -41,7 +48,7 @@ let app = new Vue({
             url: 'https://api.thecatapi.com/v1/breeds'
         }).then((response) => {
             this.cat_breeds = response.data
-            console.log(this.cat_breeds)
+            // console.log(this.cat_breeds)
         })
        }
     },
@@ -50,5 +57,8 @@ let app = new Vue({
         this.cat_picture()
         this.cat_categories()
         this.cat_breeds()
+    },
+    page_reload: function(){
+        setTimeout(location.reload(), 3000)
     }
 })

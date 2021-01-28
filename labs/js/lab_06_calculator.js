@@ -14,9 +14,9 @@ var app = new Vue({
             
         },
         clear: function(){
-            location.reload();
+            this.screen_example = '';
         },
-        equals: function(solution){
+        equals: function(){
             this.second_operand = this.screen_example
             // use first operand, second operand and operator to calculate result
             // let result = (this.first_operand, this.operator1, )
@@ -86,7 +86,3 @@ function factorial(num){
     }
     return num
 }
-// function sine(num){
-//     let result = math.sin(num)
-//     return result
-// }

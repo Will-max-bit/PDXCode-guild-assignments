@@ -17,6 +17,8 @@
     <!-- Gfonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -34,9 +36,11 @@
                 <div class="col-md-4 offset-md-4" id="buttons">
                     <button type="button" v-on:click="moreCats" class="btn btn-primary" >More random cats</button>
                     <select v-model="category">
+                        <option class="select_holder" value=""disabled selected hidden>select a category</option>
                         <option v-for="category in cat_categories" v-bind:value="category.id">{{category.name}}</option>
                     </select>
                     <select v-model="breed">
+                        <option class="select_holder" value=""disabled selected hidden>select a breed</option>
                         <option v-for="breed in cat_breeds" v-bind:value="breed.id">{{breed.name}}</option>
                     </select>
                 </div>

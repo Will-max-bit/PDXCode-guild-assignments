@@ -3,8 +3,9 @@
     min-height: 100px;
     max-width: 350px;
     text-align: center;
-    font-size: xx-large;
+    font-size: x-large;
     margin: 2px;
+    border: 2px black;
 }
 .buttons_numbers{
     display: flex;
@@ -14,9 +15,10 @@
     padding: 2px;
     /* max-width: 250px; */
     justify-content:center;
+   
 }
 h1{
-    text-align: left;
+    text-align: center;
 }
 .container{
     display: flex;
@@ -28,13 +30,18 @@ h1{
 .box1{
     display: flex;
     border-style: solid;
+    
     /* width: fit-content; */
     max-width: 350px;
-    /* background-color: rgb(139, 136, 136); */
+    background-color: rgb(196, 193, 193);
 }
 .btn_operators{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+}
+#app {
+    display: flex;
+    justify-content: center;
 }

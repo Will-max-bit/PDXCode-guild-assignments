@@ -1,28 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/labs/js/lab_08_weather_api.css" type="text/css" />
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <!-- axios -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous"></script>
+
     <title>Weather</title>
 </head>
+
 <body>
-<h1>hello world</h1>
-<div id="app">
- {{message}}
- <br>
-<!-- {{lat}}
-{{lon}} -->
-<br>
-{{currentTemp}} degrees
-<br>
-{{dateTime}}
-<div>Id here {{iconDescription}}</div>
+    <h1>Weather</h1>
+    <div id="app">
 
 
-</div>
-    
+        <!-- {{hours}} -->
+        <div class="card_img">
+            <div class="card" style="width: 18rem;">
+                <img v-bind:src="icon" class="card-img-top" alt="iconDescription">
+                <div class="card-body">
+                    <h5 class="card-title">{{(dateTime).toDateString()}}</h5>
+                    <p class="card-text">feels like {{currentTemp}} degrees</p>
+                    <h5>Condition</h5>
+                    <p>{{iconDescription}}</p>
+                    <h5>sunrise</h5>
+                    <p> {{sunrise}}</p>
+                    <h5>sunset</h5>
+                    <p> {{sunset}}</p>
+                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                </div>
+            </div>
+        </div>
+        <!-- weekly forecast below -->
+        <div class="accordion accordion-flush" id="accordionExample">
+            <div class="accordion-item" v-for='week in weekly'>
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        {{(new Date(week.dt * 1000).toDateString())}}
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <h5>feels like</h5>
+                        <strong>{{(Math.round(week.feels_like.day - 273.15)* 1.8 + 32)}} degrees</strong>
+                        <h6>High</h6>
+                        {{(Math.round(week.temp.max - 273.15) * 1.8 + 32)}} degrees
+                        <h6>Low</h6>
+                        {{(Math.round(week.temp.min - 273.15) * 1.8 + 32)}} degrees
+                        <h6>Sunrise</h6>
+                        {{new Date(week.sunrise * 1000).toTimeString()}} a.m <br>
+                        <h6>Sunset</h6>
+                        {{new Date(week.sunset * 1000).toTimeString()}} p.m
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
     <!-- vue -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <!-- secrets -->
@@ -30,4 +88,5 @@
     <!-- js internal -->
     <script src="/labs/js/lab_08_weather_api.js"></script>
 </body>
+
 </html>

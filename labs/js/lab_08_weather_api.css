@@ -1,0 +1,18 @@
+body {
+    background-image: url(/labs/images1/background_weather.jpg);
+    background-size:auto;
+    background-image: no-repeat;
+}
+.card_img{
+    display: flex;
+    justify-content: center;
+    margin: 0, auto;
+    margin-bottom: 2px;
+}
+.accordion{
+    background-color: darkgray;
+}
+h1{
+    display: flex;
+    justify-content: center;
+}

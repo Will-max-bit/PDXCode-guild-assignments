@@ -12,7 +12,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous"></script>
-
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@300&display=swap"
+        rel="stylesheet">
     <title>Weather</title>
 </head>
 
@@ -23,10 +28,11 @@
 
         <!-- {{hours}} -->
         <div class="card_img">
+            <!-- <div>{{phase}}</div> -->
             <div class="card" style="width: 18rem;">
                 <img v-bind:src="icon" class="card-img-top" alt="iconDescription">
                 <div class="card-body">
-                    <h5 class="card-title">{{(dateTime).toDateString()}}</h5>
+                    <h5 class="card-title">{{dateTime.toDateString()}}</h5>
                     <p class="card-text">feels like {{currentTemp}} degrees</p>
                     <h5>Condition</h5>
                     <p>{{iconDescription}}</p>
@@ -40,26 +46,26 @@
         </div>
         <!-- weekly forecast below -->
         <div class="accordion accordion-flush" id="accordionExample">
-            <div class="accordion-item" v-for='week in weekly'>
-                <h2 class="accordion-header" id="headingOne">
+            <div class="accordion-item" v-for='(week,index) in weekly'>
+                <h2 class="accordion-header" v-bind:id="'heading'+ index">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        {{(new Date(week.dt * 1000).toDateString())}}
+                        v-bind:data-bs-target="'#collapse'+ index" aria-expanded="false" aria-controls="collapseOne">
+                        <strong>{{(new Date(week.dt * 1000).toDateString())}}</strong> 
                     </button>
                 </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                <div v-bind:id="'collapse' + index" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <h5>feels like</h5>
                         <strong>{{(Math.round(week.feels_like.day - 273.15)* 1.8 + 32)}} degrees</strong>
                         <h6>High</h6>
-                        {{(Math.round(week.temp.max - 273.15) * 1.8 + 32)}} degrees
+                        <p>{{(Math.round(week.temp.max - 273.15) * 1.8 + 32)}} degrees</p>
                         <h6>Low</h6>
-                        {{(Math.round(week.temp.min - 273.15) * 1.8 + 32)}} degrees
+                        <p>{{(Math.round(week.temp.min - 273.15) * 1.8 + 32)}} degrees</p>
                         <h6>Sunrise</h6>
-                        {{new Date(week.sunrise * 1000).toTimeString()}} a.m <br>
+                        <p>{{new Date(week.sunrise * 1000).toTimeString()}} a.m <br></p>
                         <h6>Sunset</h6>
-                        {{new Date(week.sunset * 1000).toTimeString()}} p.m
+                        <p>{{new Date(week.sunset * 1000).toTimeString()}} p.m</p>
 
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 body {
     background-image: url(/labs/images1/background_weather.jpg);
-    background-size:auto;
+    background-size:cover;
     background-image: no-repeat;
 }
 .card_img{
@@ -8,11 +8,27 @@ body {
     justify-content: center;
     margin: 0, auto;
     margin-bottom: 2px;
+    
+}
+.card{
+    box-shadow: 0 0 10px rgb(8, 8, 8);
 }
 .accordion{
-    background-color: darkgray;
+    background-color: rgb(185, 232, 253);
+    margin: 10px;
+    /* margin-top: 5px; */
+    box-shadow: 0 0 10px rgb(8, 8, 8);
+    /* margin-bottom: 5px; */
 }
 h1{
     display: flex;
     justify-content: center;
+    font-family: 'Bebas Neue', cursive;
+    
+}
+h6{
+    text-decoration: underline;
+}
+p{
+    font-family: 'Roboto Condensed', sans-serif;
 }

@@ -14,6 +14,10 @@ let app = new Vue({
         weekly: '',
         items: 0,
         phase: '',
+        histTempHigh: '',
+        histTempLow:'',
+        histSum:'',
+        // radarImg: '',
 
 
 
@@ -53,6 +57,7 @@ let app = new Vue({
                 let sunset_min = (non_unixDate.getMinutes())
                 this.sunset = sunset_hours + ':' + sunset_min + 'p.m'
                 this.weekly = response.data.daily
+                
 
             })
         },
@@ -71,36 +76,63 @@ let app = new Vue({
                 this.lon = response.data.location.lng
                 this.weather_call()
             })
-
+            
 
         },
-        moonPhase: function () {
+        // radar_map: function(){
+        //     axios({
+        //         method: 'get',
+        //         url: "https://tilecache.rainviewer.com/v2/",
+        //         params: {
+        //             ts: this.unix_date,
+        //             size: 256,
+        //             z: 6,
+        //             latitude: this.lat,
+        //             longitude: this.lon,
+        //             color: 1,
+
+
+        //         }
+        //     }).then(response => {
+        //         console.log(response.data)
+        //         // this.radarImg = response.data
+        //     })
+        // },
+        historicalData: function(){
             axios({
-                method: 'get',
-                url: "https://www.icalendar37.net/lunar/api/?",
-                params: {
-                    lang: 'en',
-                    month: new Date().getMonth() + 1,
-                    year: new Date().getFullYear(),
-                    size: "100%",
-                    lightColor: "rgb(255,255,230)",
-                    shadeColor: "transparent",
-                    texturize: true,
-                }
-            }).then(response => {
+                method:'get',
+                url: "https://dark-sky.p.rapidapi.com/44.05264668240474,-123.16752578076206,1580423253",
+                headers: {
+                    'x-rapidapi-key': '28f73391c3mshd1e6e76b00328a1p13db77jsn312eba774283',
+                    'x-rapidapi-host': 'dark-sky.p.rapidapi.com'
+                  }
+
+                // params: {
+                //     longitude: this.lon,
+                //     latitude: this.lat,
+                //     time: (this.unix_date)
+
+                // }
+            }).then( response =>{
                 console.log(response.data)
-                this.phase = response.data.phase[1]
+                this.histTempHigh = response.data.currently.temperature
+                this.histTempLow = response.data.daily.data[0].temperatureLow
+
             })
         }
-
-
+        
+        
 
 
     },
     created: function () {
         // this.weather_call()
         this.location_call()
-        this.moonPhase()
+        // this.radar_map()
+        this.historicalData()
+        
+        
+        
 
 
     },

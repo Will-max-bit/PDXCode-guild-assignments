@@ -103,7 +103,7 @@ let app = new Vue({
                 method:'get',
                 url: "https://dark-sky.p.rapidapi.com/44.05264668240474,-123.16752578076206,1580423253",
                 headers: {
-                    'x-rapidapi-key': '28f73391c3mshd1e6e76b00328a1p13db77jsn312eba774283',
+                    'x-rapidapi-key': '',
                     'x-rapidapi-host': 'dark-sky.p.rapidapi.com'
                   }
 

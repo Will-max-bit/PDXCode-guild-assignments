@@ -10,6 +10,15 @@ body {
     margin: 0, auto;
     margin-bottom: 2px;
     
+    
+}
+.historical {
+    box-shadow: 0 0 10px rgb(8, 8, 8);
+    
+    background-color: whitesmoke;
+    border-radius: 6px;
+    max-height: 200px;
+    
 }
 .card{
     box-shadow: 0 0 10px rgb(8, 8, 8);

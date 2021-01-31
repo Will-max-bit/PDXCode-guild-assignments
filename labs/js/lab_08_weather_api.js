@@ -57,6 +57,8 @@ let app = new Vue({
                 let sunset_min = (non_unixDate.getMinutes())
                 this.sunset = sunset_hours + ':' + sunset_min + 'p.m'
                 this.weekly = response.data.daily
+                console.log(this.lat)
+                console.log(this.lon)
                 
 
             })
@@ -71,7 +73,8 @@ let app = new Vue({
                     apiKey: geo_Key
                 }
             }).then(response => {
-                // console.log(response.data)
+                // console.log(this.lat)
+                // console.log(this.lon)
                 this.lat = response.data.location.lat
                 this.lon = response.data.location.lng
                 this.weather_call()
@@ -103,7 +106,7 @@ let app = new Vue({
                 method:'get',
                 url: "https://dark-sky.p.rapidapi.com/44.05264668240474,-123.16752578076206,1580423253",
                 headers: {
-                    'x-rapidapi-key': '',
+                    'x-rapidapi-key': darkSky,
                     'x-rapidapi-host': 'dark-sky.p.rapidapi.com'
                   }
 
@@ -117,6 +120,7 @@ let app = new Vue({
                 console.log(response.data)
                 this.histTempHigh = response.data.currently.temperature
                 this.histTempLow = response.data.daily.data[0].temperatureLow
+                this.histSum = response.data.currently.summary
 
             })
         }

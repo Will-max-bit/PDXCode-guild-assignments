@@ -14,7 +14,7 @@ body {
 }
 .historical {
     box-shadow: 0 0 10px rgb(8, 8, 8);
-    
+    padding: 5px;
     background-color: whitesmoke;
     border-radius: 6px;
     max-height: 200px;

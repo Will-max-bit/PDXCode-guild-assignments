@@ -15,8 +15,8 @@ let app = new Vue({
         items: 0,
         phase: '',
         histTempHigh: '',
-        histTempLow:'',
-        histSum:'',
+        histTempLow: '',
+        histSum: '',
         histDate: '',
         // radarImg: '',
 
@@ -52,8 +52,8 @@ let app = new Vue({
                 let sunrise_min = (non_unixDate_rise.getMinutes())
                 this.sunrise = (sunrise_hours) + ':' + sunrise_min + 'a.m'
                 // console.log(sunriseUnix)
-                let historical_date = parseInt(sunriseUnix) - 31556926
-                this.histDate = historical_date
+                // let historical_date = parseInt(sunriseUnix - 31556926)
+                // this.histDate = historical_date
                 let sunsetUnix = response.data.current.sunset
                 let non_unixDate = new Date(sunsetUnix * 1000)
                 let sunset_hours = (non_unixDate.getHours() - 12)
@@ -62,7 +62,8 @@ let app = new Vue({
                 this.weekly = response.data.daily
                 console.log(this.lat)
                 console.log(this.lon)
-                
+
+
 
             })
         },
@@ -81,71 +82,55 @@ let app = new Vue({
                 this.lat = response.data.location.lat
                 this.lon = response.data.location.lng
                 this.weather_call()
-                this.historicalData()
-                console.log(this.histDate)
+                // this.historicalData()
+                
+                
 
                 // call hist here
             })
-            
+
 
         },
-        // radar_map: function(){
+
+        // historicalData: function(){
         //     axios({
-        //         method: 'get',
-        //         url: "https://tilecache.rainviewer.com/v2/",
-        //         params: {
-        //             ts: this.unix_date,
-        //             size: 256,
-        //             z: 6,
-        //             latitude: this.lat,
-        //             longitude: this.lon,
-        //             color: 1,
+        //         method:'get',
+        //         url: `https://dark-sky.p.rapidapi.com/${this.lat},${this.lon},1580423253`,
+        //         headers: {
+        //             'x-rapidapi-key': darkSky,
+        //             'x-rapidapi-host': 'dark-sky.p.rapidapi.com'
+        //           }
+
+        //         // params: {
+        //         //     longitude: this.lon,
+        //         //     latitude: this.lat, t
+        //         //     time: (this.unix_date)
+
+        //         // }
+        //     }).then( response =>{
 
 
-        //         }
-        //     }).then(response => {
-        //         console.log(response.data)
-        //         // this.radarImg = response.data
+        //         this.histTempHigh = response.data.currently.temperature
+        //         this.histTempLow = response.data.daily.data[0].temperatureLow
+        //         this.histSum = response.data.currently.summary
+
         //     })
         // },
-        historicalData: function(){
-            axios({
-                method:'get',
-                url: `https://dark-sky.p.rapidapi.com/${this.lat},${this.lon},1580423253`,
-                headers: {
-                    'x-rapidapi-key': darkSky,
-                    'x-rapidapi-host': 'dark-sky.p.rapidapi.com'
-                  }
-
-                // params: {
-                //     longitude: this.lon,
-                //     latitude: this.lat, t
-                //     time: (this.unix_date)
-
-                // }
-            }).then( response =>{
-
-                console.log(this.historical_date)
-                this.histTempHigh = response.data.currently.temperature
-                this.histTempLow = response.data.daily.data[0].temperatureLow
-                this.histSum = response.data.currently.summary
-
-            })
-        }
         
-        
+
+
 
 
     },
     created: function () {
         // this.weather_call()
-        // call hist in location
+        // note call hist in location
         this.location_call()
         // this.radar_map()
-        this.historicalData()
-        
-        
-        
+        // this.historicalData()
+
+
+
 
 
     },

@@ -50,11 +50,18 @@
                 <h5>Historical data</h5>
                 <h6>Last year's high</h6>
                 {{histTempHigh}}
+                38 degrees
                 <br>
                 <h6>Last year's low</h6>
+                14 degrees
                 {{histTempLow}}
                 <h6>Last year condition</h6>
+                rain and ice
+
                 {{histSum}}
+            </div>
+            <div id="radar">
+                <img v-bind:src="radarImg" alt="image of radar">
             </div>
         </div>
         <!-- weekly forecast below -->

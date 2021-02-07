@@ -18,7 +18,7 @@ let app = new Vue({
         histTempLow: '',
         histSum: '',
         histDate: '',
-        // radarImg: '',
+        radarImg: '',
 
 
 
@@ -60,8 +60,8 @@ let app = new Vue({
                 let sunset_min = (non_unixDate.getMinutes())
                 this.sunset = sunset_hours + ':' + sunset_min + 'p.m'
                 this.weekly = response.data.daily
-                console.log(this.lat)
-                console.log(this.lon)
+                // console.log(this.lat)
+                // console.log(this.lon)
 
 
 
@@ -116,7 +116,17 @@ let app = new Vue({
 
         //     })
         // },
-        
+        weather_map: function(){
+            axios({
+                method: 'get',
+                url: `https://tile.openweathermap.org/map/temp_new/6/1/2.png?appid=${openweathermap_api_key}`,
+                
+                
+            }).then(response =>{
+                this.radarImg = response.data + '@4x.png'
+                
+            })
+        }    
 
 
 
@@ -126,7 +136,8 @@ let app = new Vue({
         // this.weather_call()
         // note call hist in location
         this.location_call()
-        // this.radar_map()
+        this.weather_map()
+        
         // this.historicalData()
 
 

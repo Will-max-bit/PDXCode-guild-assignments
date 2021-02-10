@@ -4,11 +4,57 @@ h1, h2{
 }
 body{
     margin: 5px;
+    
 }
 #contentboxes{
-   box-shadow:  0 0 10px rgb(8, 8, 8);
-   margin: 3px;
+   box-shadow:  0 0 10px rgb(129, 128, 128);
+   margin: 10px;
+   border-radius: 10px;
+   padding: 5px;
+   background-color: rgb(250, 248, 248);
 }
 .form-select{
     padding: 5px;
+    
+}
+.mid-box{
+    border-radius: 10px;
+}
+#priority-level{
+    margin-bottom: 1px;
+}
+#item-text{
+    font-family: 'Handlee', cursive;
+    text-shadow: rgb(8, 8, 8) 1px 0 15px;
+    font-weight: bold;
+    text-align: center;
+}
+#submit-btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 4px;
+}
+#table-bordered{
+    margin-bottom: 30px;
+}
+/* #item_text{
+    margin: 3px;
+    margin-right: 6px;
+} */
+#completed-content{
+    display: flex;
+    justify-content: space-evenly;
+}
+/* aside{
+    display: flex;
+    justify-content: right;
+} */
+.high{
+    color: tomato;
+}
+.low{
+    color: blue;
+}
+.medium{
+    color: darkgreen;
 }

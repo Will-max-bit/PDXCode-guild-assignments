@@ -14,7 +14,7 @@ def index(request):
     items = ToDoItem.objects.filter(completed=False).order_by('created_date')
     priorities = Priority.objects.all()
     completed_todos = ToDoItem.objects.filter(completed=True).order_by('created_date')
-    print(completed_todos)
+    # print(completed_todos)
     context = {
         'items': items,
         'priorities': priorities,
@@ -35,17 +35,25 @@ def save_todo_item(request):
 
 def delete_item(request, completed_todo_id):
     items_completed = ToDoItem.objects.get(id=completed_todo_id)
-    print(items_completed)
+    # print(items_completed)
     items_completed.delete()
 
     return HttpResponseRedirect(reverse('ToDo_app:index'))
 
-#can't add new items, deleting items from completed deletes the above tasks as well likely due to same name "ToDoItem"
-#which doesn't make sense because I've reassigned the variables
+
 
 def completed_todo(request, text_id):
     item = ToDoItem.objects.get(id=text_id)
     item.completed = True
     item.save()
-    print(item)
+    # print(item)
+    return HttpResponseRedirect(reverse('ToDo_app:index'))
+
+
+def delete_all(request):
+    # completed_items = completed_todo(request, text_id)
+    completed_todos = ToDoItem.objects.filter(completed=True)
+    completed_todos.delete()
+    print(completed_todos)
+    print('this is a marker')
     return HttpResponseRedirect(reverse('ToDo_app:index'))

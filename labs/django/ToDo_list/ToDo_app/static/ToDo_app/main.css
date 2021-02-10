@@ -1,0 +1,14 @@
+h1, h2{
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+body{
+    margin: 5px;
+}
+#contentboxes{
+   box-shadow:  0 0 10px rgb(8, 8, 8);
+   margin: 3px;
+}
+.form-select{
+    padding: 5px;
+}

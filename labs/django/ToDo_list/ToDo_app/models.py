@@ -14,6 +14,7 @@ class ToDoItem(models.Model):
     priority = models.ForeignKey(Priority, on_delete=models.PROTECT, related_name='Priority')
     created_date = models.DateTimeField()
     completed_date = models.DateTimeField(null=True, blank=True)
+    completed = models.BooleanField(default=False)
     def __str__(self):
         return self.text
     

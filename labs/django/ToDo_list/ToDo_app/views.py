@@ -27,6 +27,7 @@ def save_todo_item(request):
     priority_id = request.POST['priority_id']
     priorities = Priority.objects.get(id=priority_id)
     text = request.POST['text']
+    # dueDate = request.POST[]
     created_date = timezone.now()
     to_do_item = ToDoItem(text = text, created_date = created_date, priority = priorities)
     to_do_item.save()

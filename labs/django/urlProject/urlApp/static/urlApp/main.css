@@ -1,4 +1,13 @@
 #enter_area{
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: row;
+    justify-content: center;
+}
+/* #copyBtn{
+    display: flex;
+    flex-d;
+} */
+#table_urls{
+    max-height: 400px;
+    overflow:scroll;
 }

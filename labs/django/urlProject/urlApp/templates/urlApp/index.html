@@ -21,16 +21,16 @@
                 <form action="{% url 'urlApp:save_url'%}" method="post">
                     {% csrf_token %}
                     <div class="form-group">
-                        <label for="long_url">Long URL</label>
+                        <label for="long_url"><h1>Tiny URL creator</h1></label>
                         <input type="text" name="long_url" required class="form-control" id="url_input"
                             aria-describedby="url_input" placeholder="Enter url">
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
                 </form>
             </div>
 
             <hr>
-            <div class="row">
+            <div class="row" id="">
                 <table class="table">
                     <thead>
                         <tr>
@@ -38,6 +38,7 @@
                             <th scope="col">Short URL</th>
                             <th scope="col"> Copy</th>
                             <th scope="col"># accessed</th>
+                            <th scope="col">Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -46,9 +47,10 @@
                             <td>{{url}}</td>
                             <td id="url_short">http://127.0.0.1:8000/redirect/{{url.code}}</td>
                             <td><button type="button"
-                                    onclick="navigator.clipboard.writeText('http://127.0.0.1:8000/redirect/{{url.code}}')"
-                                    id="copyBtn" class="btn btn-outline-success">copy</button></td>
+                                    onclick="navigator.clipboard.writeText('http://127.0.0.1:8000/redirect/{{url.code}}'); alert('copied') "
+                                    id="copyBtn" class="btn btn-outline-success btn-sm">copy</button></td>
                             <td>{{url.counter}}</td>
+                            <td><a href="{% url 'urlApp:delete_URL' %}" id="deletebtn" type="button" class="btn btn-danger btn-sm">Delete</a></td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -57,7 +59,7 @@
             <hr>
         </div>
 
-        <div class="toast" role="alert" id="myToast" aria-live="assertive" aria-atomic="true">
+        <!-- <div class="toast" role="alert" id="myToast" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
                 <img src="..." class="rounded mr-2" alt="...">
                 <strong class="mr-auto">Bootstrap</strong>
@@ -69,7 +71,7 @@
             <div class="toast-body">
                 Hello, world! This is a toast message.
             </div>
-        </div>
+        </div> -->
 
 
 

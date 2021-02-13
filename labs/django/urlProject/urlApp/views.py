@@ -22,9 +22,10 @@ def random_string_creator():
 # Create your views here.
 def index(request):
     urls = ShortenedURL.objects.all()
+    
     context = {
-        'message': 'URL App!!!!',
         'urls': urls,
+        
     }
     return render(request, 'urlApp/index.html', context)
 
@@ -45,11 +46,11 @@ def counting(request):
 
 
 def redirect(request, code):
-    code = ShortenedURL.objects.get(code=code)
-    url = str(code)
-    # counter += 1
-    # print(counter)
-    return HttpResponseRedirect(url)
+    shortened_url = ShortenedURL.objects.get(code=code)
+    shortened_url.counter += 1
+    shortened_url.save()
+    return HttpResponseRedirect(shortened_url.url)
+   
 
      
     

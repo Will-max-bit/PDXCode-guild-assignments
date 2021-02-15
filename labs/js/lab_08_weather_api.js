@@ -83,8 +83,8 @@ let app = new Vue({
                 this.lon = response.data.location.lng
                 this.weather_call()
                 // this.historicalData()
-                
-                
+
+
 
                 // call hist here
             })
@@ -116,17 +116,17 @@ let app = new Vue({
 
         //     })
         // },
-        weather_map: function(){
+        weather_map: function () {
             axios({
                 method: 'get',
                 url: `https://tile.openweathermap.org/map/temp_new/6/1/2.png?appid=${openweathermap_api_key}`,
-                
-                
-            }).then(response =>{
+
+
+            }).then(response => {
                 this.radarImg = response.data + '@4x.png'
-                
+
             })
-        }    
+        }
 
 
 
@@ -137,7 +137,7 @@ let app = new Vue({
         // note call hist in location
         this.location_call()
         this.weather_map()
-        
+
         // this.historicalData()
 
 

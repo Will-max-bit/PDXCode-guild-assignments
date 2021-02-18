@@ -13,9 +13,12 @@
 <body>
     <div class="page-header">
         {% if user.is_authenticated %}
-        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        <a href="{% url 'blog:post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        <p>Welcome {{user.username}}</p>
+        {% else %}
+        <a href="{% url 'users:register' %}">login now</a>
         {% endif %}
-        <h1><a href="/">Django Girls Blog</a></h1>
+        <h1><a href="{% url 'blog:post_list' %}">Django Girls Blog</a></h1>
     </div>
     <div class="content container">
         <div class="row">

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from .models import ShortenedURL
@@ -32,7 +32,7 @@ def delete_URL(request, save_url_id):
     completed_url = ShortenedURL.objects.get(id=save_url_id)
     completed_url.delete()
 
-    return HttpResponseRedirect(reverse('urlApp:delete_URL'))
+    return HttpResponseRedirect(reverse('urlApp:index'))
 
 def save_url(request):
     long_url = request.POST['long_url']
@@ -46,11 +46,13 @@ def save_url(request):
 
 
 
-def redirect(request, code):
+def site_redirect(request, code):
+    print(code)
     shortened_url = ShortenedURL.objects.get(code=code)
     shortened_url.counter += 1
+    print(shortened_url)
     shortened_url.save()
-    return HttpResponseRedirect(shortened_url.url)
+    return redirect(shortened_url.url)
    
 
      

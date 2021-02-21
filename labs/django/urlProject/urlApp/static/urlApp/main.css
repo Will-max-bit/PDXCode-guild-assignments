@@ -9,6 +9,8 @@
     background-color: rgb(250, 241, 211);
     text-align: center;
     width: 100%;
+    /* margin: 10px; */
+    margin-right: 10px;
 }
 
 html, body {

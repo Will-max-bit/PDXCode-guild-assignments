@@ -34,6 +34,17 @@
                             aria-describedby="url_input" placeholder="Enter url">
                     </div>
                     <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                    
+                    <div class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="d-flex">
+                            <div class="toast-body">
+                                Short URL copied
+                            </div>
+                            <button type="button" class="btn-close me-1 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                    </div>
+                
+                
                 </form>
             </div>
         </div>
@@ -55,10 +66,10 @@
             {% for url in urls %}
             <tr>
                 <td>{{ url.url }}</td>
-                <td id="url_short">http://127.0.0.1:8000/redirect/{{url.code}}</td>
+                <td id="url_short">http://127.0.0.1:8000/{{url.code}}</td>
                 <td>
                     <button type="button"
-                        onclick="navigator.clipboard.writeText('http://127.0.0.1:8000/redirect/{{url.code}}') "
+                        onclick="navigator.clipboard.writeText('http://127.0.0.1:8000/{{url.code}}') "
                         class="btn btn-outline-success btn-sm btn_copy">copy</button>
                 </td>
                 <td>{{url.counter}}</td>
@@ -69,15 +80,24 @@
         </tbody>
     </table>
 
+    {% for url in urls %}
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: {{url.counter}}%" aria-valuenow="50" aria-valuemin="1" aria-valuemax="10">{{ url.url }}</div>
+      </div>
+      
+    <hr>
+    </div>
+    {% endfor %}
+    <hr>
 
-    <div class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+    <!-- <div class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="d-flex">
             <div class="toast-body">
                 Short URL copied
             </div>
             <button type="button" class="btn-close me-1 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
-    </div>
+    </div> -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"

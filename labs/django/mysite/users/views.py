@@ -3,6 +3,7 @@ from django.contrib import messages
 from .forms import UserRegisterForm
 from django.contrib.auth.models import User
 from blog.models import Post
+from .models import UserProfile
 import django.contrib.auth
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import logout
@@ -19,15 +20,22 @@ def register(request):
     # return HttpResponse('ok')
 
     if request.method == 'POST':
-        form = UserRegisterForm(request.POST)
+        form = UserRegisterForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            image = request.Files.get('image', None)
-            user = User.objects.get(username=username)
-            messages.success(request, f'Account created for {username}!')
-            django.contrib.auth.login(request, user, image)
-        return redirect('blog:post_list')
+            # create a user from the submitted form data
+            user = form.save()
+            # getting the image that was chosen by the user
+            # profile_picture = request.FILES.get('image')
+            profile_picture = form.cleaned_data['image']
+            # creating a user profile associated with this user and image
+            user_profile = UserProfile(user=user, profile_picture=profile_picture)
+            user_profile.save()
+
+            messages.success(request, f'Account created for {user.username}!')
+            django.contrib.auth.login(request, user)
+            return redirect('blog:post_list')
+        else:
+            return render(request, 'users/register.html', {'form': form})
     else:
         form = UserRegisterForm()
     return render(request, 'users/register.html', {'form': form})
@@ -46,5 +54,5 @@ def login(request):
     return render(request, 'users/login.html', {})
 
 def profile_page(request):
-    posts = Post.objects.filter(author = request.user)
+    posts = Post.objects.filter(author = request.user).order_by('-published_date')
     return render(request, 'blog/profile_page.html',{'posts': posts})

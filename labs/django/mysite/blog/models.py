@@ -11,7 +11,7 @@ class Post(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
     # likes = models.ManyToManyField(User, related_name='blogpost_like')
-
+    blog_picture = models.ImageField(upload_to='images/', null=True, blank=True)
     # def number_of_likes(self):
     #     return self.likes.count()
 
@@ -21,3 +21,8 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_image(self):
+        if self.blog_picture:
+            return self.blog_picture.url
+        return ''

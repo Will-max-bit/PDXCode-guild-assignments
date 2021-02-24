@@ -14,6 +14,24 @@
         <img src="{{post.get_image}}"/>
         {% endif %}
         <p>{{ post.text|linebreaksbr }}</p>
+        <!--  -->
+        
+        {% if user.is_authenticated %}
+        <form action="" method="POST">
+          {% csrf_token %}
+      
+          {% if post_is_liked %}
+          <button type="submit" name="blogpost_id" value="{{object.id}}" class="btn btn-info">Unlike</button>
+          {% else %}
+          <button type="submit" name="blogpost_id" value="{{object.id}}" class="btn btn-info">Like</button>
+          {% endif %}
+        </form>
+      {% else %}
+        <a class="btn btn-outline-info" href="{% url 'users:login' %}">Log in to like this article!</a><br>
+      {% endif %}
+      <strong class="text-secondary">{{ number_of_likes }} Like(s){{ number_of_likes|pluralize }}</strong>
+<hr>
+        <!--  -->
         <div>
         {% if user.is_authenticated and user == post.author %}
         <a class="btn btn-primary" href="{% url 'blog:post_edit' pk=post.pk %}">Edit Post</a>

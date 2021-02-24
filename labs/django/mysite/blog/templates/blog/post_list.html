@@ -9,6 +9,7 @@
     <h2><a href="{% url 'blog:post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
     <p class="author">author: {{post.author}}</p>
     <p>{{ post.text|linebreaksbr }}</p>
+
 </div>
 {% endfor %}
 {% endblock %}

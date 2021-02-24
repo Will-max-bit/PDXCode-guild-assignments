@@ -10,10 +10,10 @@ class Post(models.Model):
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
-    # likes = models.ManyToManyField(User, related_name='blogpost_like')
+    likes = models.ManyToManyField(User, related_name='blogpost_like')
     blog_picture = models.ImageField(upload_to='images/', null=True, blank=True)
-    # def number_of_likes(self):
-    #     return self.likes.count()
+    def number_of_likes(self):
+        return self.likes.count()
 
     def publish(self):
         self.published_date = timezone.now()

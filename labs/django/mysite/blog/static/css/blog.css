@@ -3,8 +3,8 @@ h1 a, h2 a {
     font-family: 'Lobster';
 }
 body {
-    padding-left: 15px;
-    background-color: #1C7BBA;
+    /* padding-left: 15px; */
+    background-color: #2f93f7;
 }
 .username{
     font-weight: bolder;
@@ -14,6 +14,12 @@ body {
 }
 .username_home{
     text-align: center;
+}
+.messages, .success{
+    position: absolute;
+    top: 60px;
+    color: black;
+    background-color: rgb(250, 245, 239);
 }
 /* .page-header {
     background-color: #bff8ff;
@@ -31,6 +37,7 @@ body {
     margin-left: 70px;
     margin-top: 40px;
     background-color:floralwhite;
+    box-shadow: 0 9px 0px 0px #4e4e4e, 0 -9px 0px 0px #f0f1f5, 12px 0 15px -4px rgba(0, 55, 162, 0.97), -12px 0 15px -4px rgba(0, 55, 162, 0.97);
 }
 
 h1, h2, h3, h4 {
@@ -62,4 +69,16 @@ h1, h2, h3, h4 {
 
 .post h2 a, .post h2 a:visited {
     color: #000000;
+}
+nav{
+    box-shadow: 0 8px 6px -6px black;
+}
+.profile_photo{
+    border-style: solid blue 1px;
+    display: flex;
+    justify-content: center;
+}
+.profile_home{
+    display: flex;
+    margin-top: 5px;
 }

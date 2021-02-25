@@ -3,8 +3,8 @@
 //     }))
 // })
 
-let copyBtn = document.querySelector('#copyBtn')
-let toast = document.querySelector('#myToast')
+// let copyBtn = document.querySelector('#copyBtn')
+// let toast = document.querySelector('#myToast')
 
 // function copy()
 // {

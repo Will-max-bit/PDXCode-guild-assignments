@@ -581,26 +581,26 @@ test = string.ascii_lowercase
 
 # print(sum_of_minimums(test))
 
-test = [{'name': 'Bart'},{'name': 'Lisa'},{'name': 'Maggie'},{'name': 'Homer'},{'name': 'Marge'}]
-test1 = [ {'name': 'Bart'} ]
-test2 = [ {'name': 'Bart'}, {'name': 'Lisa'} ]
+# test = [{'name': 'Bart'},{'name': 'Lisa'},{'name': 'Maggie'},{'name': 'Homer'},{'name': 'Marge'}]
+# test1 = [ {'name': 'Bart'} ]
+# test2 = [ {'name': 'Bart'}, {'name': 'Lisa'} ]
 
-def namelist(names):
-    output = []
-    for name in names:
-        for value in name:
-            output.append(name[value])
-    if len(output) == 0:
-        return ''
-    elif len(output) == 1:
-        return ''.join(output)
-    elif len(output) == 2:
-        return output[0] + ' & ' + output[1]
-    elif len(output) > 2:
-        x = output[-2] + ' & ' + output[-1]
-        return ', '.join(output[0:-2]) +', '+ x
+# def namelist(names):
+#     output = []
+#     for name in names:
+#         for value in name:
+#             output.append(name[value])
+#     if len(output) == 0:
+#         return ''
+#     elif len(output) == 1:
+#         return ''.join(output)
+#     elif len(output) == 2:
+#         return output[0] + ' & ' + output[1]
+#     elif len(output) > 2:
+#         x = output[-2] + ' & ' + output[-1]
+#         return ', '.join(output[0:-2]) +', '+ x
 
-print(namelist(test))
+# print(namelist(test))
 #---------------------------------------------------------------------
 
 
@@ -647,3 +647,20 @@ print(namelist(test))
 # test2 = 'How are you today?'
 # print(decode(test3))
 # print(encode(test2))
+import string
+test1 = 'internationalization'
+test2 = 'accessibility'
+test3 = 'elephant-ride'
+
+def abbreviate(s):
+    puncs = string.punctuation
+    output = []
+    for x in s:
+        if x in puncs:
+            output.append(' ')
+        else:
+            output.append(x)
+    
+    return output
+#lets get the single letters first then do the multiple word conditions
+print(abbreviate(test3))

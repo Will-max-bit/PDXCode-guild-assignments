@@ -4,8 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 class UserRegisterForm(UserCreationForm):
-    email = forms.EmailField()
-    image = forms.ImageField()
+    image = forms.ImageField(required=False)
 
     class Meta:
         model = User

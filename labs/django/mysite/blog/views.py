@@ -49,17 +49,20 @@ class BlogPostDetailView(DetailView):
             liked = True
         data['number_of_likes'] = likes_connected.number_of_likes()
         data['post_is_liked'] = liked
+        data['randomentry'] = 'everybody_loves_taco_bell'
         return data
 
 
 @login_required
 def BlogPostLike(request, pk):
-    post = get_object_or_404(Post, id=request.POST.get('post_id'))
+    print(pk, 'line57')
+    post = get_object_or_404(Post, id=pk)
+    print(post,'line59')
     if post.likes.filter(id=request.user.id).exists():
         post.likes.remove(request.user)
     else:
         post.likes.add(request.user)
-    return HttpResponseRedirect(reverse('post_list', args=[str(pk)]))
+    return redirect('blog:post_detail', pk=post.pk)
 
 
 @login_required

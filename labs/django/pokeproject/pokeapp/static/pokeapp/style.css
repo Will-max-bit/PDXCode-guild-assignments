@@ -1,0 +1,17 @@
+h1{
+    display: flex;
+    justify-content: center;
+    font-family: 'DotGothic16', sans-serif;
+}
+#search_area{
+    display: flex;
+    justify-content: center;
+}
+#submit_btn{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+body{
+    background-image: url(/labs/django/pokeproject/pokeapp/static/images/pokeapp.jpg);
+}

@@ -1,0 +1,131 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'pokeapp/style.css' %}">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Pokedex_vue</title>
+</head>
+
+<body>
+    <div class="container mt-3" id="app">
+        <div class="row justify-content-md-center">
+            <div class="col-md-auto">
+                <h1>Pokedex!!!</h1>
+                <div class="mb-3" id="search_area">
+
+                    <input type="text" v-model="search_text" placeholder="search" class="form-control" id="search" />
+
+                </div>
+                <div id="submit_btn">
+                    <button  type="submit" class="btn btn-primary mb-3 mr-3"
+                        v-on:click="vue_index">Submit</button>
+                </div>
+                <div>
+
+
+                    <div class="card mt-3" v-for="pokemon in pokemons" style="width: 18rem;">
+                        <img v-bind:src="[[pokemon.image_front]]" class="card-img-top" alt="...">
+                        <hr>
+                        <img v-bind:src="[[pokemon.image_back]]" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">[[pokemon.name]]</h5>
+                            <p class="card-text">
+                                height- [[pokemon.height]]
+                                <br>
+                                weight- [[pokemon.weight]]
+                                <br>
+                                type(s)- [[pokemon.type]]
+                            </p>
+                            <a v-bind:href="[[pokemon.url]]" target="_blank" class="btn btn-primary">The Wiki</a>
+                        </div>
+                    </div>
+
+                    <div class="pagination">
+                        <span class="btn" v-on:click="previous_page">&lt;</span>
+                        <span class="btn" v-on:click="set_page(page)" v-for="page in num_pages"
+                            v-bind:class="{ highlight_page: page == current_page }">[[ page ]]</span>
+                        <span class="btn" v-on:click="next_page(page)">&gt;</span>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script>
+        // Vue
+        let app = new Vue({
+            el: '#app',
+            delimiters: ['[[', ']]'],
+            data: {
+                message: 'hello world',
+                current_page: 1,
+                pokemons: [],
+                num_pages: 1,
+                search_text: '',
+            },
+            methods: {
+                vue_index: function () {
+                    axios({
+                        url: "{% url 'pokeapp:load_vue_pokemon' %}",
+                        method: 'get',
+                        params: {
+                            page: this.current_page,
+                            search: this.search_text
+                        }
+
+                    }).then(response => {
+                        this.pokemons = response.data.list_pokemon
+                        this.num_pages = response.data.num_pages
+                    })
+                },
+                previous_page: function () {
+                    if (this.current_page > 1) {
+                        this.current_page -= 1
+                        this.vue_index()
+                    }
+                },
+                set_page: function (page) {
+                    this.current_page = page,
+                        this.vue_index()
+                },
+                next_page: function (page) {
+                    if (this.current_page < this.num_pages) {
+                        this.current_page += 1
+                        this.vue_index()
+                    }
+                },
+            },
+            created: function () {
+                this.vue_index()
+            }
+        })
+
+    </script>
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

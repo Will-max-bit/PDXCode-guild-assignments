@@ -4,7 +4,7 @@ from django.http import HttpResponse, JsonResponse
 import json
 from django.core.paginator import Paginator
 from django.views.generic.list import ListView
-
+from django.db.models import Q
 # Create your views here.
 
 
@@ -32,7 +32,7 @@ def load_vue_pokemon(request):
     total = list_pokemon.count()
     if 'search' in request.GET:
         search = request.GET['search']
-        list_pokemon = list_pokemon.filter(name__icontains=search)
+        list_pokemon = list_pokemon.filter(Q(name__icontains=search)| Q(types__icontains=search))
 
     if 'page' in request.GET:
         page = request.GET['page']

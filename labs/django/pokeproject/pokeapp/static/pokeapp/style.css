@@ -13,5 +13,5 @@ h1{
     align-items: center;
 }
 body{
-    background-image: url(/labs/django/pokeproject/pokeapp/static/images/pokeapp.jpg);
+    background-image: url('/labs/django/pokeproject/pokeapp/static/pokeapp/pokeapp.png');
 }

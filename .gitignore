@@ -1,7 +1,13 @@
-
+Video practices
+video
 advent.py
-
-
+secrets.js
+shipyard_Rain_gage.rain
+images1
+video*
+uploaded_files*
+madlibproject
+vuetodoproj
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -131,3 +137,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+Codewars/running_problems.js
+Codewars/running_problems.html
+labs/django/urlProject/urlProject/asgi.py
+labs/django/urlProject/urlProject/settings.py
+labs/django/urlProject/urlProject/wsgi.py

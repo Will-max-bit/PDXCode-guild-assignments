@@ -660,30 +660,49 @@ test = string.ascii_lowercase
 # #lets get the single letters first then do the multiple word conditions
 # print(abbreviate(test3))
 
-test = [20,37,20,21]
-limit = 2
-test1 = ([1,1,3,3,7,2,2,2,2], 3)
-test2 = [1,1,1,1]
-test3 = ([20,37,20,21],1)
+# test = [20,37,20,21]
+# limit = 1
+# test1 = ([1,1,3,3,7,2,2,2,2], 3)
+# test2 = [1,1,1,1]
+# test3 = ([20,37,20,21],1)
 
-def delete_nth(order,max_e):
-    output = []
-    limit = max_e
-    for num in order:
-        if num not in output:
-            x = 0
-            output.append(num)
-        elif num in output:
-            for second_number in order:
-                if x == limit:
-                    return output
-                if second_number == num:
-                    x += 1
-                    if x <= limit:
-                        output.append(num)
-                    elif x > limit:
-                        output.pop(second_number)
-    return output
-        
+# def delete_nth(order,max_e):
+#     output = []
+#     limit = max_e
+#     for num in order:
+#         if num not in output:
+#             x = 0
+#             output.append(num)
+#         elif num in output:
+#             for second_number in order:
+#                 x += 1
+#                 if second_number == num:
+#                     if x <= limit:
+#                         output.append(num)
+#                 if x == limit:
+#                     return output
+#                 elif x > limit:
+#                     output.pop(second_number)
+#     return output
 
-print(delete_nth(test2, limit))
+# print(delete_nth(test, limit))
+
+
+
+
+
+test = 'helloWorld'
+test1 = "camelCase"
+test2 = "breakCamelCase"
+def solution(s):
+    output= []
+    for i,letter in enumerate(s):
+        if letter.isupper():
+            output.append(' ')
+            output.append(letter)
+        else:
+            output.append(letter)
+    return ''.join(output)
+
+print(solution(test2))
+

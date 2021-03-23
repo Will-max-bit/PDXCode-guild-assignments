@@ -18,7 +18,7 @@
     background-color: rgb(221, 221, 221);
 }
 .rainbow-text {
-    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    background-image: linear-gradient(to left, red, violet, indigo, blue, green, yellow, orange, red);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -36,4 +36,5 @@ a{
 }
 h1{
     font-size: 75px !important;
+    margin-bottom: 10px !important;
 }

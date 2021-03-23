@@ -357,11 +357,6 @@ test = string.ascii_lowercase
 
 # print(add_binary(test1,test2))
 
-# flex-flow: column-reverse wrap-reverse;
-# align-items: flex-start;
-# align-content: space-between;
-# .align-content {align-self: flex-end;}
-
 # testy = []
 # test = ['Jacob', 'Alex']
 # test1 = ['Max', 'John', 'Mark']
@@ -647,20 +642,40 @@ test = string.ascii_lowercase
 # test2 = 'How are you today?'
 # print(decode(test3))
 # print(encode(test2))
-import string
-test1 = 'internationalization'
-test2 = 'accessibility'
-test3 = 'elephant-ride'
+# import string
+# test1 = 'internationalization'
+# test2 = 'accessibility'
+# test3 = 'elephant-ride'
 
-def abbreviate(s):
-    puncs = string.punctuation
-    output = []
-    for x in s:
-        if x in puncs:
-            output.append(' ')
-        else:
-            output.append(x)
+# def abbreviate(s):
+#     puncs = string.punctuation
+#     output = []
+#     for x in s:
+#         if x in puncs:
+#             output.append(' ')
+#         else:
+#             output.append(x)
     
-    return output
-#lets get the single letters first then do the multiple word conditions
-print(abbreviate(test3))
+#     return output
+# #lets get the single letters first then do the multiple word conditions
+# print(abbreviate(test3))
+
+test = ([20,37,20,21], 1)
+limit = 1
+test1 = ([1,1,3,3,7,2,2,2,2], 3)
+test2 = ([1,1,1,1],2)
+test3 = ([20,37,20,21],1)
+
+def delete_nth(order,max_e):
+    output = []
+    limit = max_e
+    for num in order:
+        if num not in output:
+            output.append(num)
+        elif for second_number in order:
+            x = 0
+            while x <= limit:
+                output.append(num)
+        
+
+print(delete_nth(test, limit))

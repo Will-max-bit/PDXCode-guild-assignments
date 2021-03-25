@@ -691,18 +691,57 @@ test = string.ascii_lowercase
 
 
 
-test = 'helloWorld'
-test1 = "camelCase"
-test2 = "breakCamelCase"
-def solution(s):
-    output= []
-    for i,letter in enumerate(s):
-        if letter.isupper():
-            output.append(' ')
-            output.append(letter)
+# test = 'helloWorld'
+# test1 = "camelCase"
+# test2 = "breakCamelCase"
+# def solution(s):
+#     output= []
+#     for i,letter in enumerate(s):
+#         if letter.isupper():
+#             output.append(' ')
+#             output.append(letter)
+#         else:
+#             output.append(letter)
+#     return ''.join(output)
+
+# print(solution(test2))
+import string
+alpha = string.ascii_lowercase
+beta = string.ascii_uppercase
+puncs = string.punctuation
+nums = string.digits
+def rot13(message):
+            #the encrypted message will be added to the blank string
+    output = []
+            #converting the string into an iterable list
+    chars = list(message)
+    for c in chars:
+            #during the loop when a space is encountered it will append that to the list
+        if c == ' ' or c in nums or c in puncs:
+            output.append(c)
+        elif c in beta:
+            i = beta.index(c)
+            i += 13
+            if i >= len(beta):
+                i -= 26
+            output.append(beta[i])
+        
         else:
-            output.append(letter)
-    return ''.join(output)
+            #when the loop encounters a character it is assigned to 'i' at the current alphabet list value c @ k etc
+            i = alpha.index(c)
 
-print(solution(test2))
 
+            # repositioning i to the integer that the user inputed, if 'i' is at 'k' and the user input 3 i would now be at value 'o'
+            i += 13
+            #when incrementing i goes beyond the range of list alpha we subtract the len of alphabet (26) to avoid going beyond the range.
+            if i >= len(alpha):
+                i -= 26
+            #the rotated letter is now appended the blank list above
+            output.append(alpha[i])
+            #when the loop is through all the characters, we convert the list to a string and return the string to the user
+    output = ''.join(output)
+        
+    return output
+test = 'Grfg'
+print(rot13(test))
+# print(len(beta))

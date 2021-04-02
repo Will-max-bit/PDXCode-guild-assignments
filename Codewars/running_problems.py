@@ -745,24 +745,43 @@ test = string.ascii_lowercase
 # test = 'Grfg'
 # print(rot13(test))
 # # print(len(beta))
-test = [1, 2, 0, 1, 0, 1, 0, 3, 0, 1]
-test1 = [1, 2, 1, 1, 3, 1, 0, 0, 0, 0]
-test2 = [9, 0, 0, 9, 1, 2, 0, 1, 0, 1, 0, 3, 0, 1, 9, 0, 0, 0, 0, 9]
+# test = [1, 2, 0, 1, 0, 1, 0, 3, 0, 1]
+# test1 = [1, 2, 1, 1, 3, 1, 0, 0, 0, 0]
+# test2 = [9, 0, 0, 9, 1, 2, 0, 1, 0, 1, 0, 3, 0, 1, 9, 0, 0, 0, 0, 9]
 
-def move_zeros(array):
-    output = []
-    zero_list =[]
-    for number in array:
-        if number == 0:
-            zero_list.append(number)
-            continue
-        output.append(number)
-    final = output + zero_list
-    return final 
+# def move_zeros(array):
+#     output = []
+#     zero_list =[]
+#     for number in array:
+#         if number == 0:
+#             zero_list.append(number)
+#             continue
+#         output.append(number)
+#     final = output + zero_list
+#     return final 
 
-print(move_zeros(test2))
+# print(move_zeros(test2))
 
-def move_zeros1(array):
-    return [n for n in array if n != 0] + [n for n in array if n == 0]
+# def move_zeros1(array):
+#     return [n for n in array if n != 0] + [n for n in array if n == 0]
 
 # print(move_zeros1(test))
+x = 2
+test1 = "Sample text"
+#       "Sml etapetx"
+test2 = "Simple transposition"
+
+
+def simple_transposition(text):
+    vanilla = list(text)
+    output = []
+    output2 = []
+    for i in range(len(vanilla)):
+        if i % 2 == 0:
+            output2.append(vanilla[i])
+        elif i % 2 == 1:
+            output.append(vanilla[i])
+    x = output2 + output
+    return "".join(x)
+
+print((simple_transposition(test1)))

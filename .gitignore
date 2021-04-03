@@ -7,6 +7,7 @@ images1
 video*
 uploaded_files*
 madlibproject
+projectSecrets.js
 vuetodoproj
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -142,3 +143,4 @@ Codewars/running_problems.html
 labs/django/urlProject/urlProject/asgi.py
 labs/django/urlProject/urlProject/settings.py
 labs/django/urlProject/urlProject/wsgi.py
+labs/django/pokeproject/pokeapp/templates/pokeapp/vue_index.html

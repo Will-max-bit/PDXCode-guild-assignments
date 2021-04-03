@@ -766,22 +766,32 @@ test = string.ascii_lowercase
 #     return [n for n in array if n != 0] + [n for n in array if n == 0]
 
 # print(move_zeros1(test))
-x = 2
-test1 = "Sample text"
-#       "Sml etapetx"
-test2 = "Simple transposition"
+# x = 2
+# test1 = "Sample text"
+# #       "Sml etapetx"
+# test2 = "Simple transposition"
 
 
-def simple_transposition(text):
-    vanilla = list(text)
-    output = []
-    output2 = []
-    for i in range(len(vanilla)):
-        if i % 2 == 0:
-            output2.append(vanilla[i])
-        elif i % 2 == 1:
-            output.append(vanilla[i])
-    x = output2 + output
-    return "".join(x)
+# def simple_transposition(text):
+#     vanilla = list(text)
+#     output = []
+#     output2 = []
+#     for i in range(len(vanilla)):
+#         if i % 2 == 0:
+#             output2.append(vanilla[i])
+#         elif i % 2 == 1:
+#             output.append(vanilla[i])
+#     x = output2 + output
+#     return "".join(x)
 
-print((simple_transposition(test1)))
+# print((simple_transposition(test1)))
+
+test = "Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill"
+
+def meeting(s):
+    s = s.upper()
+    attendants = s.split(';')
+    x = attendants[::-1]
+    return x
+
+print(meeting(test))

@@ -3,10 +3,11 @@ import json
 import pyperclip
 
 data = {'pokemon':[]}
-num_pokemon = 152
+num_pokemon = 900
 for i in range(1, num_pokemon):
     # get the data from the pokemon api
     response = requests.get('https://pokeapi.co/api/v2/pokemon/' + str(i))
+    # print(response.text)
     pokeapi_data = json.loads(response.text)
 
     # extract the relevant portions of data
@@ -32,10 +33,10 @@ for i in range(1, num_pokemon):
     }
 
     # add the pokemon to our list
+    
     data['pokemon'].append(pokemon)
 
     # give the user some feedback
     print(str(round(i/num_pokemon*100,2))+'%')
-
 # copy the resulting json to the clipboard
 pyperclip.copy(json.dumps(data, indent=4))

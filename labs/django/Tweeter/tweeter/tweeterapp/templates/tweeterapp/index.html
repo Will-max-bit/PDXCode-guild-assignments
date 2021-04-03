@@ -1,0 +1,13 @@
+{% extends 'tweeterapp/base.html' %}
+{% block content %}
+{% for twit in twits %}
+
+<div class="row mb-2 ">
+    <div class="col-md-6 shadow">{{twit.author}}</div>
+    <div class="col-md-6 shadow">{{twit.created_date}}</div>
+</div>
+<div class="row ms-3 me-3">{{twit.body}}</div>
+<hr>
+
+{% endfor %}
+{% endblock %}

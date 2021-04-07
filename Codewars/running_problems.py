@@ -796,24 +796,64 @@ test = string.ascii_lowercase
 
 # print(meeting(test))
 
-test = "din"
-test1 = "recede"
-test2 = "Success"
+# test = "din"
+# test1 = "recede"
+# test2 = "Success"
 
-def duplicate_encode(word):
-    output = []
-    test = []
-    usable = list(word.lower())
-    for letter in usable:
-        if letter not in test:
-            output.append('(')
-            test.append(letter)
-            continue
-        elif letter in test:
-            output.append(')')
-    return ''.join(output)
+# def duplicate_encode(word):
+#     output = []
+#     test = []
+#     usable = list(word.lower())
+#     for letter in usable:
+#         if letter not in test:
+#             output.append('(')
+#             test.append(letter)
+#             continue
+#         elif letter in test:
+#             output.append(')')
+#     return ''.join(output)
 
 # print(duplicate_encode(test2))
+
+# alphabet ={
+# 'a': 1, 
+# 'b': 2, 
+# 'c': 3, 
+# 'd': 4,
+# 'e': 5,
+# 'f': 6,
+# 'g': 7,
+# 'h': 8, 
+# 'i': 9, 
+# 'j': 10, 
+# 'k': 11, 
+# 'l': 12, 
+# 'm': 13, 
+# 'n': 14, 
+# 'o': 15, 
+# 'p': 16, 
+# 'q': 17, 
+# 'r': 18, 
+# 's': 19, 
+# 't': 20, 
+# 'u': 21, 
+# 'v': 22, 
+# 'w': 23, 
+# 'x': 24, 
+# 'y': 25, 
+# 'z': 26}
+# test = "The sunset sets at twelve o' clock."
+# def alphabet_position(text):
+#     output = []
+#     usable = list(text.lower())
+#     for letter in usable:
+#         if letter not in alphabet:
+#             pass
+#         else: 
+#             output.append(str(alphabet[letter]))
+#     return ' '.join(output)
+
+# print(alphabet_position(test))
 
 alphabet ={
 'a': 1, 
@@ -842,15 +882,16 @@ alphabet ={
 'x': 24, 
 'y': 25, 
 'z': 26}
-test = "The sunset sets at twelve o' clock."
-def alphabet_position(text):
+test = 'man i need a taxi up to ubud'
+test2 = 'what time are we climbing up the volcano'
+test3 = 'take me to semynak'
+def high(x):
+    counter = 0
     output = []
-    usable = list(text.lower())
-    for letter in usable:
-        if letter not in alphabet:
-            pass
-        else: 
-            output.append(str(alphabet[letter]))
-    return ' '.join(output)
-
-print(alphabet_position(test))
+    testingdict = {}
+    testable = x.split()
+    for word in testable:
+        for letter in word:
+            output.append(alphabet[letter])
+    return testable, output
+print(high(test))

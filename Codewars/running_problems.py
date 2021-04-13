@@ -855,43 +855,76 @@ test = string.ascii_lowercase
 
 # print(alphabet_position(test))
 
-alphabet ={
-'a': 1, 
-'b': 2, 
-'c': 3, 
-'d': 4,
-'e': 5,
-'f': 6,
-'g': 7,
-'h': 8, 
-'i': 9, 
-'j': 10, 
-'k': 11, 
-'l': 12, 
-'m': 13, 
-'n': 14, 
-'o': 15, 
-'p': 16, 
-'q': 17, 
-'r': 18, 
-'s': 19, 
-'t': 20, 
-'u': 21, 
-'v': 22, 
-'w': 23, 
-'x': 24, 
-'y': 25, 
-'z': 26}
-test = 'man i need a taxi up to ubud'
-test2 = 'what time are we climbing up the volcano'
-test3 = 'take me to semynak'
-def high(x):
-    counter = 0
+# alphabet ={
+# 'a': 1, 
+# 'b': 2, 
+# 'c': 3, 
+# 'd': 4,
+# 'e': 5,
+# 'f': 6,
+# 'g': 7,
+# 'h': 8, 
+# 'i': 9, 
+# 'j': 10, 
+# 'k': 11, 
+# 'l': 12, 
+# 'm': 13, 
+# 'n': 14, 
+# 'o': 15, 
+# 'p': 16, 
+# 'q': 17, 
+# 'r': 18, 
+# 's': 19, 
+# 't': 20, 
+# 'u': 21, 
+# 'v': 22, 
+# 'w': 23, 
+# 'x': 24, 
+# 'y': 25, 
+# 'z': 26}
+# test = 'man i need a taxi up to ubud'
+# test2 = 'what time are we climbing up the volcano'
+# test3 = 'take me to semynak'
+# def high(x):
+#     counter = 0
+#     output = []
+#     testingdict = {}
+#     testable = x.split()
+#     for word in testable:
+#         for letter in word:
+#             output.append(alphabet[letter])
+#     return testable, output
+# print(high(test))
+# Encrypt this!
+
+# You want to create secret messages which can be deciphered by the Decipher this! kata. Here are the conditions:
+
+# Your message is a string containing space separated words.
+# You need to encrypt each word in the message using the following rules:
+# The first letter needs to be converted to its ASCII code.
+# The second letter needs to be switched with the last letter
+# Keepin' it simple: There are no special characters in input.
+c = 'p'
+test = "A wise old owl lived in an oak"
+encrypted= "65 119esi 111dl 111lw 108dvei 105n 97n 111ka"
+test1 = "The more he saw the less he spoke"
+test2 = "The less he spoke the more he heard"
+example = "84eh 108sse 104e 115eokp 116eh 109ero 104e 104dare"
+# print("The ASCII value of '" + c + "' is", ord(c))
+
+def encrypt_this(text):
+    lst_text = text.split()
     output = []
-    testingdict = {}
-    testable = x.split()
-    for word in testable:
-        for letter in word:
-            output.append(alphabet[letter])
-    return testable, output
-print(high(test))
+    for word in lst_text:
+        for i in range(len(word)):
+            output.append(str(ord(word[i])))
+            if len(word) == 1:
+                continue
+            elif len(word) == 2:
+                output.append(str(word[-1]))
+            else:
+                output.append(str(word[-1]))
+                output.append(str(word[2:-2]))
+    return ' '.join(output)
+    
+print(encrypt_this(test))

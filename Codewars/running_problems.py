@@ -904,27 +904,42 @@ test = string.ascii_lowercase
 # The first letter needs to be converted to its ASCII code.
 # The second letter needs to be switched with the last letter
 # Keepin' it simple: There are no special characters in input.
-c = 'p'
-test = "A wise old owl lived in an oak"
-encrypted= "65 119esi 111dl 111lw 108dvei 105n 97n 111ka"
-test1 = "The more he saw the less he spoke"
-test2 = "The less he spoke the more he heard"
-example = "84eh 108sse 104e 115eokp 116eh 109ero 104e 104dare"
-# print("The ASCII value of '" + c + "' is", ord(c))
+# c = 'p'
+# test = "A wise old owl lived in an oak"
+# encrypted= "65 119esi 111dl 111lw 108dvei 105n 97n 111ka"
+# test1 = "The more he saw the less he spoke"
+# test2 = "The less he spoke the more he heard"
+# example = "84eh 108sse 104e 115eokp 116eh 109ero 104e 104dare"
+# # print("The ASCII value of '" + c + "' is", ord(c))
 
-def encrypt_this(text):
-    lst_text = text.split()
-    output = []
-    for word in lst_text:
-        for i in range(len(word)):
-            output.append(str(ord(word[i])))
-            if len(word) == 1:
-                continue
-            elif len(word) == 2:
-                output.append(str(word[-1]))
-            else:
-                output.append(str(word[-1]))
-                output.append(str(word[2:-2]))
-    return ' '.join(output)
+# def encrypt_this(text):
+#     lst_text = text.split()
+#     output = []
+#     for word in lst_text:
+#         for i in range(len(word)):
+#             output.append(str(ord(word[i])))
+#             if len(word) == 1:
+#                 continue
+#             elif len(word) == 2:
+#                 output.append(str(word[-1]))
+#             else:
+#                 output.append(str(word[-1]))
+#                 output.append(str(word[2:-2]))
+#     return ' '.join(output)
     
-print(encrypt_this(test))
+# print(encrypt_this(test))
+test = 'Dermatoglyphics'
+test1 = 'aba'
+test2 = 'moOse'
+
+def is_isogram(string):
+    word = string.lower()
+    output = []
+    for letter in word:
+        if letter in output:
+            return False
+        elif letter not in output:
+            output.append(letter)
+    return True
+
+print(is_isogram(test1))

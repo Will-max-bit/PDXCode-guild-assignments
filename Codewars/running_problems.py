@@ -928,18 +928,37 @@ test = string.ascii_lowercase
 #     return ' '.join(output)
     
 # print(encrypt_this(test))
-test = 'Dermatoglyphics'
-test1 = 'aba'
-test2 = 'moOse'
+# test = 'Dermatoglyphics'
+# test1 = 'aba'
+# test2 = 'moOse'
 
-def is_isogram(string):
-    word = string.lower()
-    output = []
-    for letter in word:
-        if letter in output:
-            return False
-        elif letter not in output:
-            output.append(letter)
-    return True
+# def is_isogram(string):
+#     word = string.lower()
+#     output = []
+#     for letter in word:
+#         if letter in output:
+#             return False
+#         elif letter not in output:
+#             output.append(letter)
+#     return True
 
-print(is_isogram(test1))
+# print(is_isogram(test1))
+
+# test = "Did it work?"
+# ex = "Did ti work?"
+# test2 = "I really hope it works this time..."
+# ex2 = "I yllaer hope ti works siht time..."
+# test3 = "Reverse this string, please!"
+
+# def reverse_alternate(string):
+test1 = 'Do We have A Hashtag'
+test2 = 'Codewars Is Nice'
+test3 = 'codewars  is  nice'
+def generate_hashtag(s):
+        first = s.lower()
+        second = first.title()
+        words = [word for word in second.split()]
+        final_string = '#'+''.join(words) 
+        return final_string if 1 <  len(final_string) <= 140 else False 
+
+print(generate_hashtag(test2))

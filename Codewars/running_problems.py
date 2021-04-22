@@ -951,14 +951,49 @@ test = string.ascii_lowercase
 # test3 = "Reverse this string, please!"
 
 # def reverse_alternate(string):
-test1 = 'Do We have A Hashtag'
-test2 = 'Codewars Is Nice'
-test3 = 'codewars  is  nice'
-def generate_hashtag(s):
-        first = s.lower()
-        second = first.title()
-        words = [word for word in second.split()]
-        final_string = '#'+''.join(words) 
-        return final_string if 1 <  len(final_string) <= 140 else False 
+# test1 = 'Do We have A Hashtag'
+# test2 = 'Codewars Is Nice'
+# test3 = 'codewars  is  nice'
+# def generate_hashtag(s):
+#         first = s.lower()
+#         second = first.title()
+#         words = [word for word in second.split()]
+#         final_string = '#'+''.join(words) 
+#         return final_string if 1 <  len(final_string) <= 140 else False 
 
-print(generate_hashtag(test2))
+# print(generate_hashtag(test2))
+#exp_sum(2) # 2  -> 1+1 , 2
+#exp_sum(3) # 3 -> 1+1+1, 1+2, 3
+#exp_sum(4) # 5 -> 1+1+1+1, 1+1+2, 1+3, 2+2, 4
+#exp_sum(5) # 7 -> 1+1+1+1+1, 1+1+1+2, 1+1+3, 1+2+2, 1+4, 5, 2+3
+
+# def exp_sum(n):
+#     output = []
+#     for i in range(1, n + 1):
+#         count = 0
+#         str1 = str(i)
+#         count += str1.count('1')
+#         output.append(count)
+
+#format_duration(62)    # returns "1 minute and 2 seconds"
+#format_duration(3662)  # returns "1 hour, 1 minute and 2 seconds"
+
+def format_duration(seconds):
+    output = []
+    if seconds == 0:
+        return 'Now'
+    if seconds == 3600:
+        return '1 hour'
+    if seconds == 86400:
+        return '1 day'
+    if seconds == 60:
+        output.append('1 minute')
+    if seconds < 3600:
+        minutes = seconds // 60
+        secondz = seconds % 60
+    if seconds > 86400:
+        if 
+        hours = seconds // 
+        
+
+

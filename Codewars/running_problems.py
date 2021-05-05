@@ -978,22 +978,34 @@ test = string.ascii_lowercase
 #format_duration(62)    # returns "1 minute and 2 seconds"
 #format_duration(3662)  # returns "1 hour, 1 minute and 2 seconds"
 
-def format_duration(seconds):
-    output = []
-    if seconds == 0:
-        return 'Now'
-    if seconds == 3600:
-        return '1 hour'
-    if seconds == 86400:
-        return '1 day'
-    if seconds == 60:
-        output.append('1 minute')
-    if seconds < 3600:
-        minutes = seconds // 60
-        secondz = seconds % 60
-    if seconds > 86400:
-        if 
-        hours = seconds // 
-        
+# def format_duration(seconds):
+#     output = []
+#     if seconds == 0:
+#         return 'Now'
+#     if seconds == 3600:
+#         return '1 hour'
+#     if seconds == 86400:
+#         return '1 day'
+#     if seconds == 60:
+#         output.append('1 minute')
+#     if seconds < 3600:
+#         minutes = seconds // 60
+#         secondz = seconds % 60
+#     if seconds > 86400:
+#         if 
+#         hours = seconds // 
+
+import math
+something = 185
+test2 = 359999
+def make_readable(seconds):
+    hours = math.floor(seconds / 3600)
+    remainder = seconds - (hours * 3600)
+    minutes = math.floor(remainder / 60 )
+    seconds = remainder - (minutes * 60)
+    return f'{hours}:{minutes}:{seconds}'
+    # return f'hours{hours}, minutes{minutes} seconds{remainder2}'
+    
 
 
+print(make_readable(test2))

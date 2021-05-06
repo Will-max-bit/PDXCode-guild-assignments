@@ -996,16 +996,21 @@ test = string.ascii_lowercase
 #         hours = seconds // 
 
 import math
-something = 185
+something = 60
 test2 = 359999
 def make_readable(seconds):
     hours = math.floor(seconds / 3600)
+    string_hours = str(hours)
     remainder = seconds - (hours * 3600)
     minutes = math.floor(remainder / 60 )
+    string_minutes = str(minutes)
     seconds = remainder - (minutes * 60)
-    return f'{hours}:{minutes}:{seconds}'
-    # return f'hours{hours}, minutes{minutes} seconds{remainder2}'
+    string_seconds = str(seconds)
+    output_hours = string_hours.zfill(2)
+    output_minutes = string_minutes.zfill(2)
+    output_seconds = string_seconds.zfill(2)
+    return f'{output_hours}:{output_minutes}:{output_seconds}'
     
 
 
-print(make_readable(test2))
+print(make_readable(something))

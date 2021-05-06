@@ -11,9 +11,10 @@ import random  # We need to import random before we can use it
 
 # These are the available choices, we can use this for both the user and computer
 choices = ["rock", "paper", "scissors"]
-
+wanna_play = input("do you want to play RPS").lower()
 # This is our main loop, It will continue to run our game until we break out of it
-while True:
+user = input("Choose either 'rock', 'paper', or 'scissors'").lower()
+while wanna_play == 'yes':
     # Printing a welcome message everytime our game loops
     print("Welcome to Rock, Paper, Scissors. Type 'done' at any time to exit")
 
@@ -21,18 +22,19 @@ while True:
     computer = random.choice(choices)
     computer_choice = computer
 
-    user = ""
+    # user = ""
     # Continue looping while the user has not made a valid selection
-    while user not in choices:
-        user = input("Choose either 'rock', 'paper', or 'scissors'").lower()
+    # if user not in choices:
 
         # if the user types done, we want to stop asking them
-        if user == "done":
-            break
-
-        # if user equals done, we want to end the game
-        if user == "done":
-            break
+    if user == "done":
+        print('have a good day')
+        wanna_play ==  False
+        break
+            # if user equals done, we want to end the game
+        # if user == "done":
+        #     print('have a good day')
+        #     break
 
     # if the user and computer are the same it is a tie
     if user == computer:   # this was an error
@@ -72,4 +74,4 @@ while True:
             print(f'Sorry, You lose. opponent chose: {computer_choice}')     
     
    # the error that will not raise an error had to do with the scissors  
-   
+print('have a good day')

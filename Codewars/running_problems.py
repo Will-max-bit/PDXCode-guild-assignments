@@ -995,22 +995,76 @@ test = string.ascii_lowercase
 #         if 
 #         hours = seconds // 
 
-import math
-something = 60
-test2 = 359999
-def make_readable(seconds):
-    hours = math.floor(seconds / 3600)
-    string_hours = str(hours)
-    remainder = seconds - (hours * 3600)
-    minutes = math.floor(remainder / 60 )
-    string_minutes = str(minutes)
-    seconds = remainder - (minutes * 60)
-    string_seconds = str(seconds)
-    output_hours = string_hours.zfill(2)
-    output_minutes = string_minutes.zfill(2)
-    output_seconds = string_seconds.zfill(2)
-    return f'{output_hours}:{output_minutes}:{output_seconds}'
+# import math
+# something = 60
+# test2 = 359999
+# def make_readable(seconds):
+#     hours = math.floor(seconds / 3600)
+#     string_hours = str(hours)
+#     remainder = seconds - (hours * 3600)
+#     minutes = math.floor(remainder / 60 )
+#     string_minutes = str(minutes)
+#     seconds = remainder - (minutes * 60)
+#     string_seconds = str(seconds)
+#     output_hours = string_hours.zfill(2)
+#     output_minutes = string_minutes.zfill(2)
+#     output_seconds = string_seconds.zfill(2)
+#     return f'{output_hours}:{output_minutes}:{output_seconds}'
+# print(make_readable(something))
     
 
+# def make_readable(seconds):
+#     output = []
+#     hours = math.floor(seconds / 3600)
+#     output.append(str(hours))
+#     output.append(':')
+#     remainder = seconds - (hours * 3600)
+#     minutes = math.floor(remainder / 60 )
+#     output.append(str(minutes))
+#     output.append(':')
+#     seconds = remainder - (minutes * 60)
+#     output.append(str(seconds))
+#     for time in output:
+#         time.zfill(2)
+#     return ''.join(output)
+# print(make_readable(test2))
 
-print(make_readable(something))
+test = 'myCamelCasedString'
+# exampel - 'my-camel-cased-string'
+test2 = 'myCamelHas3Humps'
+# example - 'my-camel-has-humps'
+test3 = 'SOS'
+# example - 's-o-s'
+test4 = '42'
+# example - ''
+# def kebabize(string):
+#     output = []
+#     for letter in string:
+#         if letter.isupper():
+#             output.append('-')
+#             output.append(letter.lower())
+#         if letter.islower():
+#             output.append(letter)
+#     return ''.join(output)
+
+
+
+
+def kebabize(string):
+    output = []
+    for i in range(len(string)):
+        if string[i].isupper() and i == 0:
+            output.append(string[i].lower())
+            output.append('-')
+        elif string[i].isupper() and i == 1:
+            output.append(string[i].lower())
+            output.append('-')
+        elif string[i].isupper() and i > 1:
+            output.append(string[i].lower())
+            # output.append('-')
+        if string[i].islower():
+            output.append(string[i])
+    return ''.join(output)
+
+
+print(kebabize(test))

@@ -1029,13 +1029,13 @@ test = string.ascii_lowercase
 #     return ''.join(output)
 # print(make_readable(test2))
 
-test = 'myCamelCasedString'
-# exampel - 'my-camel-cased-string'
-test2 = 'myCamelHas3Humps'
-# example - 'my-camel-has-humps'
-test3 = 'SOS'
-# example - 's-o-s'
-test4 = '42'
+# test = 'myCamelCasedString'
+# # exampel - 'my-camel-cased-string'
+# test2 = 'myCamelHas3Humps'
+# # example - 'my-camel-has-humps'
+# test3 = 'SOS'
+# # example - 's-o-s'
+# test4 = '42'
 # example - ''
 # def kebabize(string):
 #     output = []
@@ -1050,21 +1050,86 @@ test4 = '42'
 
 
 
-def kebabize(string):
-    output = []
-    for i in range(len(string)):
-        if string[i].isupper() and i == 0:
-            output.append(string[i].lower())
-            output.append('-')
-        elif string[i].isupper() and i == 1:
-            output.append(string[i].lower())
-            output.append('-')
-        elif string[i].isupper() and i > 1:
-            output.append(string[i].lower())
-            # output.append('-')
-        if string[i].islower():
-            output.append(string[i])
-    return ''.join(output)
+# def kebabize(string):
+#     output = []
+#     for i in range(len(string)):
+#         if string[i].isupper() and i == 0:
+#             output.append(string[i].lower())
+#             output.append('-')
+#         elif string[i].isupper() and i == 1:
+#             output.append(string[i].lower())
+#             output.append('-')
+#         elif string[i].isupper() and i > 1:
+#             output.append(string[i].lower())
+#             # output.append('-')
+#         if string[i].islower():
+#             output.append(string[i])
+#     return ''.join(output)
 
 
-print(kebabize(test))
+# # print(kebabize(test))
+
+# numbers = [1,3,5,7,9]
+# for num in numbers:
+#     num * 2
+#     print(num)
+#     num + 2
+#     print(num)
+#     num - 2
+#     print(num)
+
+# sentence= 'this is a beautiful sentence!!!'
+# sentence2 = 'wow I really tacos'
+# sentence3 = 'and I love ice cream'
+
+# def senter(sentences):
+#     for letter in sentences:
+#         print(letter)
+
+# # print(senter(sentence3))
+
+# number = [1, 15, 35, 32, 1, 3, 9]
+
+# def subs(placeholder_for_subbing_numbers):
+#     x = 121
+#     for number in placeholder_for_subbing_numbers:
+#         x -= number
+#     return x
+
+# print(subs(number))
+import re
+
+nato_dict ={
+'a': 'alpha', 
+'b': 'bravo', 
+'c': 'charlie', 
+'d': 'delta',
+'e': 'echo',
+'f': 'foxtrot',
+'g': 'golf',
+'h': 'hotel', 
+'i': 'india', 
+'j': 'juliett', 
+'k': 'kilo', 
+'l': 'lima', 
+'m': 'mike', 
+'n': 'november', 
+'o': 'oscar', 
+'p': 'papa', 
+'q': 'quebec', 
+'r': 'romeo', 
+'s': 'sierra', 
+'t': 'tango', 
+'u': 'uniform', 
+'v': 'victor', 
+'w': 'whiskey', 
+'x': 'xray', 
+'y': 'yankee', 
+'z': 'zulu'}
+
+test1 = 'Did not see that coming'
+test2 = 'If you can read'
+
+def to_nato(words):
+    
+

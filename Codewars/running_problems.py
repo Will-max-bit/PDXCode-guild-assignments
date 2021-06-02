@@ -1098,6 +1098,7 @@ test = string.ascii_lowercase
 
 # print(subs(number))
 import re
+from typing import Pattern
 
 nato_dict ={
 'a': 'alpha', 
@@ -1126,10 +1127,58 @@ nato_dict ={
 'x': 'xray', 
 'y': 'yankee', 
 'z': 'zulu'}
-
-test1 = 'Did not see that coming'
+# gets first letter out of string words
+test1 = 'Did! not see that, coming!'
 test2 = 'If you can read'
+test3 = '.d?d!'
+test4 = 'did not see that coming!'
+# re.sub(r'[aeiou]','',string, flags=re.IGNORECASE)
+# def to_nato(words):
+#     new_lst = []
+#     fixed_lower = words.lower()
+#     sending_list = fixed_lower.split(' ')
+#     search_param = r'(\W\b[a-zA-Z])'
+#     testing = re.findall(search_param, fixed_lower)
+#     return testing, sending_list
+
+# def to_nato(words):
+#     first_output = []
+#     second_output = []
+#     words = words.lower()
+#     usable = words.split(' ')
+#     for word in usable:
+#         for i in range(len(word)):
+#             if i == 0:
+#                 if word[i] in puncs:
+#                     first_output.append(' ')
+#                     first_output.append(word[i])
+#                 elif word[i] not in puncs:
+#                     first_output.append(word[i])
+#             elif word[i] in puncs:
+#                 first_output.append(' ')
+#                 first_output.append(word[i])
+#     for char in first_output:
+#         if char in nato_dict:
+#             second_output.append(nato_dict[char].title())
+#         elif char not in nato_dict:
+#             second_output.append(char)
+#     return first_output
+    # return ' '.join(second_output)
+import string
+puncs = string.punctuation
 
 def to_nato(words):
-    
+    output = []
+    words = words.lower()
+    for letter in words:
+        if letter in nato_dict:
+            output.append(nato_dict[letter].title())
+        elif letter in puncs:
+            output.append(letter)
+    return ' '.join(output)
 
+
+print(to_nato(test4))
+
+'India Foxtrot Yankee Oscar Uniform Charlie Alpha November Romeo Echo Alpha Delta'
+'India Foxtrot Yankee Oscar Uniform Charlie Alfa November Romeo Echo Alfa Delta'

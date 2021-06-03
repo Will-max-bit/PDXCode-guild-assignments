@@ -1132,7 +1132,7 @@ test1 = 'Did! not see that, coming!'
 test2 = 'If you can read'
 test3 = '.d?d!'
 test4 = 'did not see that coming!'
-# re.sub(r'[aeiou]','',string, flags=re.IGNORECASE)
+
 # def to_nato(words):
 #     new_lst = []
 #     fixed_lower = words.lower()
@@ -1164,21 +1164,38 @@ test4 = 'did not see that coming!'
 #             second_output.append(char)
 #     return first_output
     # return ' '.join(second_output)
+# import string
+# puncs = string.punctuation
+
+# def to_nato(words):
+#     output = []
+#     words = words.lower()
+#     for letter in words:
+#         if letter in nato_dict:
+#             output.append(nato_dict[letter].title())
+#         elif letter in puncs:
+#             output.append(letter)
+#     return ' '.join(output)
+
+# re.sub(r'[aeiou]','',string, flags=re.IGNORECASE)
+# print(to_nato(test4))
+import re
 import string
-puncs = string.punctuation
+test1 = "a=1, b=2, c=3, d=4"
+def str_to_hash(st):
+    alpha = string.ascii_lowercase
+    subbed = re.sub(r'\W', ' ', st, flags=re.IGNORECASE)
+    lstd = subbed.split(' ')
+    usable = [item for item in lstd if item ]
+    for number in usable:
+        if number not in alpha:
+            number = int(number)
+    new_dict = {usable[i]: usable[i + 1] for i in range(0, len(usable), 2)}
+    return new_dict
 
-def to_nato(words):
-    output = []
-    words = words.lower()
-    for letter in words:
-        if letter in nato_dict:
-            output.append(nato_dict[letter].title())
-        elif letter in puncs:
-            output.append(letter)
-    return ' '.join(output)
+print(str_to_hash(test1)) 
 
-
-print(to_nato(test4))
-
-'India Foxtrot Yankee Oscar Uniform Charlie Alpha November Romeo Echo Alpha Delta'
-'India Foxtrot Yankee Oscar Uniform Charlie Alfa November Romeo Echo Alfa Delta'
+test1 = '1112223339'
+test2 = '048665088X'
+def valid_ISBN10(isbn):
+    pass

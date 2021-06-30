@@ -367,23 +367,23 @@ test = string.ascii_lowercase
 # if length <= 4 use 2 - len for "the others part" append 0,1
 
 
-# def likes(names):
-#     like = names
-#     total_of_likes = len(like)
-#     if like == []:
-#             return "no one likes this"
-#     for friend in like:
-#         num = (total_of_likes - 2) 
+def likes(names):
+    like = names
+    total_of_likes = len(like)
+    if like == []:
+            return "no one likes this"
+    for friend in like:
+        num = (total_of_likes - 2) 
         
-#         if total_of_likes >= 4:
-#             return (f'{like[0]}, {like[1]} and {num} others like this')
-#         if total_of_likes == 3:
-#             return (f'{like[0]}, {like[1]} and {like[2]} like this')
-#         if total_of_likes == 2:
-#             return (f'{like[0]} and {like[1]} like this')
-#         if total_of_likes == 1:
-#             return (f'{like[0]} likes this')
-# print(likes(testy))
+        if total_of_likes >= 4:
+            return (f'{like[0]}, {like[1]} and {num} others like this')
+        if total_of_likes == 3:
+            return (f'{like[0]}, {like[1]} and {like[2]} like this')
+        if total_of_likes == 2:
+            return (f'{like[0]} and {like[1]} like this')
+        if total_of_likes == 1:
+            return (f'{like[0]} likes this')
+
 
 
 # test = [1,2,'a','b']
@@ -458,29 +458,29 @@ test = string.ascii_lowercase
 # test2 = "1 2 2"
 # test3 = '3 50 5 35 49 47 5 1 47 29 27 41 21 3 7 11 15 23 41 3 9 11 29 21 15 51 11 3 25 51 27 21 1 41 23 35 21 47 9 5 19 47 47 19 7 37'
 
-# def iq_test(numbers):
-#     ele_list = numbers.split()
-#     output = []
-#     for i in range(len(ele_list)):
-#         out = int(ele_list[i])
-#         output.append(out)
-#     j = 0
-#     y = 0
-#     for i in range(len(output)):
-#         if output[i] % 2 == 1:
-#             j += 1
-#             result0 = output[i]
-#         if output[i] % 2 == 0:
-#             y += 1
-#             result1 = output[i]
+def iq_test(numbers):
+    ele_list = numbers.split()
+    output = []
+    for i in range(len(ele_list)):
+        out = int(ele_list[i])
+        output.append(out)
+    j = 0
+    y = 0
+    for i in range(len(output)):
+        if output[i] % 2 == 1:
+            j += 1
+            result0 = output[i]
+        if output[i] % 2 == 0:
+            y += 1
+            result1 = output[i]
     
-#     if j == 1:
-#         return output.index(result0) + 1
-#     if y == 1:
-#         return output.index(result1) + 1
+    if j == 1:
+        return output.index(result0) + 1
+    if y == 1:
+        return output.index(result1) + 1
             
 
-# print(iq_test(test3))
+
 
 # x = 2
 # y = 6
@@ -843,15 +843,15 @@ test = string.ascii_lowercase
 # 'y': 25, 
 # 'z': 26}
 # test = "The sunset sets at twelve o' clock."
-# def alphabet_position(text):
-#     output = []
-#     usable = list(text.lower())
-#     for letter in usable:
-#         if letter not in alphabet:
-#             pass
-#         else: 
-#             output.append(str(alphabet[letter]))
-#     return ' '.join(output)
+def alphabet_position(text):
+    output = []
+    usable = list(text.lower())
+    for letter in usable:
+        if letter not in alphabet:
+            pass
+        else: 
+            output.append(str(alphabet[letter]))
+    return ' '.join(output)
 
 # print(alphabet_position(test))
 
@@ -1179,23 +1179,43 @@ test4 = 'did not see that coming!'
 
 # re.sub(r'[aeiou]','',string, flags=re.IGNORECASE)
 # print(to_nato(test4))
-import re
-import string
-test1 = "a=1, b=2, c=3, d=4"
-def str_to_hash(st):
-    alpha = string.ascii_lowercase
-    subbed = re.sub(r'\W', ' ', st, flags=re.IGNORECASE)
-    lstd = subbed.split(' ')
-    usable = [item for item in lstd if item ]
-    for number in usable:
-        if number not in alpha:
-            number = int(number)
-    new_dict = {usable[i]: usable[i + 1] for i in range(0, len(usable), 2)}
-    return new_dict
+# import re
+# import string
+# test1 = "a=1, b=2, c=3, d=4"
+# def str_to_hash(st):
+#     alpha = string.ascii_lowercase
+#     subbed = re.sub(r'\W', ' ', st, flags=re.IGNORECASE)
+#     lstd = subbed.split(' ')
+#     usable = [item for item in lstd if item ]
+#     output = []
+#     for number in usable:
+#         if number in alpha:
+#             output.append(number)
+#         if number not in alpha:
+#             output.append(int(number))
+#     new_dict = {output[i]: output[i + 1] for i in range(0, len(output), 2)}
+#     return new_dict
 
-print(str_to_hash(test1)) 
+# print(str_to_hash(test1)) 
 
 test1 = '1112223339'
 test2 = '048665088X'
 def valid_ISBN10(isbn):
-    pass
+    num_lst = []
+    for num in isbn:
+        if num == 'X':
+            num = 10
+        into_num = int(num)
+        num_lst.append(into_num)
+    if len(num_lst) != 10:
+        return False
+    for number in num_lst:
+        
+    return num_lst
+print(valid_ISBN10(test2))
+# import json
+# from datetime import datetime
+# import requests
+# response = requests.get('http://www.codewars.com/api/v1/users/Will-max-bit/code-challenges/completed?page=0')
+# response_data = response.json()
+# print(response_data)

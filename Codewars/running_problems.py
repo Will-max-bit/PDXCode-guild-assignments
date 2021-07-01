@@ -1197,22 +1197,43 @@ test4 = 'did not see that coming!'
 #     return new_dict
 
 # print(str_to_hash(test1)) 
-
+# x = [1,2,3,4,5,6,7,8,9,10]
+# print(len(x))
+# for i in range(len(x)):
+#     print(i)
 test1 = '1112223339'
 test2 = '048665088X'
+test3 = '111222333'
+test4 = 'ABCDEFGHIJ'
+test5 = 'X123456788'
 def valid_ISBN10(isbn):
     num_lst = []
-    for num in isbn:
-        if num == 'X':
-            num = 10
-        into_num = int(num)
-        num_lst.append(into_num)
-    if len(num_lst) != 10:
+    testing_lst = list(isbn)
+    if len(testing_lst) != 10:
         return False
-    for number in num_lst:
-        
-    return num_lst
-print(valid_ISBN10(test2))
+    for i in range(len(testing_lst)):
+        if i == 9:
+            if testing_lst[i] == 'X':
+                num_lst.append(10)
+            elif testing_lst[i].isdigit() == True:
+                into_lst_num = int(testing_lst[i])
+                num_lst.append(into_lst_num)
+        if i != 9 and testing_lst[i].isdigit() == False:
+            return False
+        elif testing_lst[i].isdigit() == True:
+            unto_lst_num = int(testing_lst[i])
+            num_lst.append(unto_lst_num)
+    comp_lst = []
+    control = 1
+    for i in range(len(num_lst)):
+        multiple = num_lst[i] * control
+        comp_lst.append(multiple)
+        control +=1
+    if sum(comp_lst) % 11 != 0:
+        return False
+    else: 
+        return True
+print(valid_ISBN10(test4))
 # import json
 # from datetime import datetime
 # import requests

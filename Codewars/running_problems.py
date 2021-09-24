@@ -1251,14 +1251,16 @@ test4 = 'did not see that coming!'
 #     else: 
 #         return True
 # # print(valid_ISBN10(test4))
-import json
-from datetime import datetime
-import requests
-response = requests.get('http://www.codewars.com/api/v1/users/Will-max-bit/code-challenges/completed?page=0')
-response_data = response.json()
-data_response = response_data['data']
-code_data_dict = {}
-for data in data_response:
-    code_data_dict[data['name']] = str('https://www.codewars.com/kata/' + data['id'])
-
-
+# import json
+# from datetime import datetime
+# import requests
+# response = requests.get('http://www.codewars.com/api/v1/users/Will-max-bit/code-challenges/completed?page=0')
+# response_data = response.json()
+# data_response = response_data['data']
+# code_data_dict = {}
+# for data in data_response:
+#     code_data_dict[data['name']] = str('https://www.codewars.com/kata/' + data['id'])
+# https://www.codewars.com/kata/5511b2f550906349a70004e1/train/python
+def last_digit(n1, n2):
+    
+    return

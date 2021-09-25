@@ -1262,5 +1262,9 @@ test4 = 'did not see that coming!'
 #     code_data_dict[data['name']] = str('https://www.codewars.com/kata/' + data['id'])
 # https://www.codewars.com/kata/5511b2f550906349a70004e1/train/python
 def last_digit(n1, n2):
-    
+    number = int(n1)
+    exponent = n2
+    control = 1
+    while control <= exponent:
+        
     return

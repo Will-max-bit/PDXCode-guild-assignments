@@ -1261,10 +1261,56 @@ test4 = 'did not see that coming!'
 # for data in data_response:
 #     code_data_dict[data['name']] = str('https://www.codewars.com/kata/' + data['id'])
 # https://www.codewars.com/kata/5511b2f550906349a70004e1/train/python
-def last_digit(n1, n2):
-    number = int(n1)
-    exponent = n2
-    control = 1
-    while control <= exponent:
-        
-    return
+
+# def last_digit(n1, n2):
+#     number = int(n1)
+#     exponent = n2
+#     control = 1
+#     num_to_lst = []
+#     while control < exponent:
+#         number *= n1
+#         control += 1
+#     s_num = str(number)
+#     for number in s_num:
+#         num_to_lst.append(int(number))
+#     return num_to_lst[-1]
+# expected 4782969
+# print(9**7)
+# from math import pow
+# def last_digit(n1, n2):
+#     num = (n1)
+#     exponent = n2 / 2
+#     number = pow((num ** exponent),2)
+#     s_num = str(number)
+#     x = int(s_num[-1:])
+#     return x
+
+# print(last_digit((2 ** 200),(2 ** 300)))
+# x = pow(2, 200)
+# y = pow(2,200)
+# z = (pow(x,y))
+# a = str(z)
+# b = int(a[-1:])
+# print(b)
+
+def fibonacci(n):
+    fib = []
+    fibby = 0
+    control = 0
+    if n <= 0:
+        return []
+    while control < n:
+        if len(fib) == 0:
+            fib.append(0)
+        elif len(fib) > 0:
+            for i in range(len(fib)):
+                if i == 0:
+                    fib.append(1)
+                elif i >= 0:
+                    
+# print(fibonacci(4))
+# num = 4
+# fib = []
+# while fib <= num:
+
+    

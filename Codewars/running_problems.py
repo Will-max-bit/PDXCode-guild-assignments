@@ -1293,24 +1293,42 @@ test4 = 'did not see that coming!'
 # b = int(a[-1:])
 # print(b)
 
-def fibonacci(n):
-    fib = []
-    fibby = 0
-    control = 0
-    if n <= 0:
-        return []
-    while control < n:
-        if len(fib) == 0:
-            fib.append(0)
-        elif len(fib) > 0:
-            for i in range(len(fib)):
-                if i == 0:
-                    fib.append(1)
-                elif i >= 0:
+# def fibonacci(n):
+#     fib = []
+#     fibby = 0
+#     control = 0
+#     if n <= 0:
+#         return []
+#     while control < n:
+#         if len(fib) == 0:
+#             fib.append(0)
+#         elif len(fib) > 0:
+#             for i in range(len(fib)):
+#                 if i == 0:
+#                     fib.append(1)
+#                 elif i >= 0:
                     
 # print(fibonacci(4))
 # num = 4
 # fib = []
 # while fib <= num:
+x = 10
+# [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+def fibonacci(n):
+    fib_lst = []
+    while len(fib_lst) < n:
+        if len(fib_lst) == 0:
+            fib_lst.append(0)
+        elif len(fib_lst) == 1:
+            fib_lst.append(1)
+        else:
+            for i in range(len(fib_lst)):
+                fibby = fib_lst[i + 1] + fib_lst[i]
+                fib_lst.append(fibby)
+    return fib_lst
+# index not staying at the end, research starting index at certain spot, maybe math
+print(fibonacci(x))
+
+
 
     

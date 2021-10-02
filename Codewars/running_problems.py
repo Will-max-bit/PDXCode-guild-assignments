@@ -1314,20 +1314,34 @@ test4 = 'did not see that coming!'
 # while fib <= num:
 x = 10
 # [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
-def fibonacci(n):
-    fib_lst = []
-    while len(fib_lst) < n:
-        if len(fib_lst) == 0:
-            fib_lst.append(0)
-        elif len(fib_lst) == 1:
-            fib_lst.append(1)
-        else:
-            for i in range(len(fib_lst)):
-                fibby = fib_lst[i + 1] + fib_lst[i]
-                fib_lst.append(fibby)
-    return fib_lst
+# def fibonacci(n):
+#     fib_lst = []
+#     count = 0
+#     while len(fib_lst) < n:
+#         if len(fib_lst) == 0:
+#             fib_lst.append(0)
+#         elif len(fib_lst) == 1:
+#             fib_lst.append(1)
+#         else:
+#             for i in range(len(fib_lst)):
+#                 # if i != -2 or i != -1:
+#                     # continue
+#                 if len(fib_lst) <= 2:
+#                     continue
+#                 if i == -1:
+#                     print('last')
+#                 print(i)
+#                 count +=1
+#                 # print(count)
+#                 # elif i == -2 or i == -1:
+#                 fibby = fib_lst[i + 1] + fib_lst[i]
+#                 fib_lst.append(fibby)
+#     return fib_lst, count
 # index not staying at the end, research starting index at certain spot, maybe math
-print(fibonacci(x))
+# print(fibonacci(x))
+ 
+def fibonacci(n):
+    control = int(n)
 
 
 

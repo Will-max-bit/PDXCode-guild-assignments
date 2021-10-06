@@ -1293,27 +1293,13 @@ test4 = 'did not see that coming!'
 # b = int(a[-1:])
 # print(b)
 
-# def fibonacci(n):
-#     fib = []
-#     fibby = 0
-#     control = 0
-#     if n <= 0:
-#         return []
-#     while control < n:
-#         if len(fib) == 0:
-#             fib.append(0)
-#         elif len(fib) > 0:
-#             for i in range(len(fib)):
-#                 if i == 0:
-#                     fib.append(1)
-#                 elif i >= 0:
-                    
+
 # print(fibonacci(4))
 # num = 4
 # fib = []
 # while fib <= num:
-x = 10
 # [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+x = 10
 # def fibonacci(n):
 #     fib_lst = []
 #     count = 0
@@ -1337,12 +1323,52 @@ x = 10
 #                 fibby = fib_lst[i + 1] + fib_lst[i]
 #                 fib_lst.append(fibby)
 #     return fib_lst, count
+
+def fibonacci(n):
+    output = []
+    for i in range(0,n):
+        if i in [0,1]:
+            output.append(i)
+            continue
+        else:
+            output.append(output[-1] + output[-2])
+    return output
+print(fibonacci(x))
+# [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+def fibonacci2(n):
+    out= []
+    for i in range(0,n):
+        if i in [0,1]:
+            out.append(i)
+            continue
+        out.append(out[-1]+out[-2])
+    return out
+# print(fibonacci2(x))
+
+
+
+from getpass import getpass
+# answer = input('do you agree to these changes? [y/n]: ')
+# if answer.lower() in ['y','yes','ya']
+# x = getpass('password: ')
+# print(x)
+
 # index not staying at the end, research starting index at certain spot, maybe math
 # print(fibonacci(x))
- 
-def fibonacci(n):
-    control = int(n)
 
+# test1 = ['1', '12', '123', '1234', '12345', '123456']
+# tes1 = 1
 
+# test2 = ['1', '12', '123', '1234', '12345', '123456']
+# tes2 = 3
 
+# def columnize(items, columns_count):
+#     output = []
+#     if columns_count == 1:
+#         for item in items:
+#             idx = '\n' + item
+#             output.append(idx)
     
+#     return ''.join(output)
+    
+# print(columnize(test1, tes1))
